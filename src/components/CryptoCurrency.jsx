@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import CoinCard from '../components/CoinCard';
 
 const CryptoCurrency = () => {
   const [coins, setCoins] = useState([]);
@@ -19,6 +20,9 @@ const CryptoCurrency = () => {
   const handleChange = (e) => {
       setSearch(e.target.value)
   }
+  const filteredCoins = coins.filter(coin =>
+    coin.name.toLowerCase().includes(search.toLowerCase())
+    )
 
   return (
     <div className="crypto">
@@ -28,7 +32,21 @@ const CryptoCurrency = () => {
           <input type="text" className="crypto-input" placeholder="search" onChange={handleChange}/>
         </form>
       </div>
-      .crypto-reu
+      {filteredCoins.map(coin => {
+          return (
+              <CoinCard 
+              key={coin.id} 
+              name={coin.name}
+              image={coin.image}
+              symbol={coin.symbol}
+              marketCap={coin.market_cap}
+              price={coin.current_price}
+              priceChange={coin.price_change_percentage_24h}
+              volume={coin.total_volume}
+
+              />
+          )
+      })}
     </div>
   );
 };
