@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import CoinCard from '../components/CoinCard';
-
+import './CryptoCurrency.css'
 const CryptoCurrency = () => {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
@@ -25,7 +25,7 @@ const CryptoCurrency = () => {
     )
 
   return (
-    <div className="crypto">
+    <div className="crypto-app">
       <div className="crypto-search">
         <h1 className="crypto-search">Search a Currency</h1>
         <form>
