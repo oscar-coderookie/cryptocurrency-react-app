@@ -1,34 +1,34 @@
 .home-page {
-  width: 100vw;
-  overflow: hidden;
-  position: relative;
+  height:auto;
+width:100%
+  
 }
+.home-hero{
+  height:92vh
+}
+
 .home-img {
   width: 100%;
-  height: 90vh;
+  height: 100%;
   object-fit: cover;
   object-position: center;
-}
-.home-hover {
-  background: rgba(41, 41, 41, 0.493);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
+  position: relative;
 }
 
 .home-title {
   position: absolute;
   bottom: 16%;
   left: 10%;
-  width: 800px;
+  width: 60%;
+  z-index: 6;
 }
 .home-title-text {
   color: white;
   font-weight: 500;
+  filter: drop-shadow(1px 1px 4px black);
 }
 .home-register-btn {
-  padding: 16px;
+  padding: 16px 20px;
   font-size: 20px;
   border: none;
   font-weight: 500;
@@ -38,6 +38,7 @@
   box-shadow: 0 0 20px #eee;
   transition: 0.5s;
   background-size: 200% auto;
+  cursor:pointer;
 }
 
 .home-register-btn:hover {

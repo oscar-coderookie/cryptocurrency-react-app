@@ -17,7 +17,7 @@ const Header = () => {
         toggled={open} 
         toggle={setOpen} 
         onClick={() => setOpen(!open)}
-        color="#FCBB4A"
+        color="#fff"
         />
         </div>
         

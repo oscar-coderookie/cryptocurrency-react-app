@@ -1,27 +1,42 @@
-.header-block{
-    overflow: hidden;
-    width: 100vw;
+.header-block {
+  overflow: hidden;
+  width: 100%;
 }
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height:8vh;
-    background: black;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 8vh;
+  background: black;
+  z-index: 10;
 }
-.header-logo{
-  height:6vh;
+.header-logo {
+  height: 4vh;
   margin-left: 30px;
-  filter: drop-shadow(1px 1px 8px white);
+  animation: shinyLogo 5s ease infinite;
+  z-index: 7;
 }
-.header-menu{
-    color: white;
-    position: absolute;
-    right: 5%;
-    font-size:30px;
-    transition: all .2s ease;
-    z-index: 10;
+.header-menu {
+  color: white;
+  position: fixed;
+  right: 0;
+  padding-right: 30px;
+  font-size: 30px;
+  transition: all 0.2s ease;
+  z-index: 10;
 }
-.header-menu:hover{
-    color: gold;
+.header-menu:hover {
+  color: gold;
+}
+
+@keyframes shinyLogo {
+  0% {
+    filter: drop-shadow(0px 0px 3px white);
+  }
+  50% {
+    filter: drop-shadow(0px 0px 20px white);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 2px white);
+  }
 }
