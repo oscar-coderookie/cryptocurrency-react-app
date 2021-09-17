@@ -5,14 +5,33 @@
 }
 .coin-name{
     display: flex;
-    font-size:14px
+    align-items: center;
+    
+}
+.coin-title{
+  font-size:18px;
+  font-weight:600;
 }
 .coin-table{
     text-align: center;
-    color: white;
-    /* background: linear-gradient(to right, #f2f2f2, #dbdbdb, #eaeaea); */
+    color: rgb(31, 31, 31);
+    
 }
 
 .coin-field{
+  height: 46px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.404) ;
+}
+.coin-symbol{
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.red{
+  color: red;
+  font-weight: 500;
+}
+.green{
+  color: rgb(6, 199, 6);
+  font-weight: 500;
 }

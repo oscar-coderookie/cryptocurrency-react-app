@@ -1,0 +1,11 @@
+.table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.table h1{
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 20px 0px;
+}

@@ -1,10 +1,26 @@
+.header-block{
+    overflow: hidden;
+    width: 100vw;
+}
 .header{
     display: flex;
     align-items: center;
     justify-content: center;
-    height:16vh;
+    height:10vh;
     background: black;
 }
 .header-logo{
-    width:100px
+  height:8vh;
+  filter: drop-shadow(1px 1px 8px white);
+}
+.header-menu{
+    color: white;
+    position: absolute;
+    right: 5%;
+    font-size:30px;
+    transition: all .2s ease;
+    z-index: 10;
+}
+.header-menu:hover{
+    color: gold;
 }

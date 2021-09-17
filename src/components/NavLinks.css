@@ -1,0 +1,39 @@
+.navbar{
+    background: rgba(0, 0, 0, 0.726);
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:0;
+    right:0;
+    transition: all 0.4s ease;
+    height: 100vh;
+    z-index: 1;
+    opacity: 0;
+}
+.navbar.active{
+    opacity: 1
+}
+
+.navbar-links{
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding:10px 0px;
+    transition: all 0.3s ease;
+    
+}
+.navbar-links:hover{
+    color: gold;
+}
+.navbar-list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column
+}
+
+.navbar-list li{
+    padding: 10px 0px;
+}
