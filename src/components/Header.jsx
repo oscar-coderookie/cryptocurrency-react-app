@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Twirl as Hamburger } from 'hamburger-react'
 import "./Header.css";
-import logo from "../img/logo.png";
+import logo from "../img/logo2.png";
 import NavLinks from "./NavLinks";
 
 const Header = () => {
