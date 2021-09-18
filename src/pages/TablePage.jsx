@@ -1,13 +1,13 @@
 import React from "react";
-import Table from "../components/Table";
+import PaginationTable from "../components/PaginationTable/PaginationTable";
 import "./TablePage.css";
 const TablePage = () => {
 
   return (
     <div className="table">
       
-      <h1>Criptomercado:</h1>
-      <Table />
+      <h1>CryptoMarket:</h1>
+      <PaginationTable/>
     </div>
   );
 };

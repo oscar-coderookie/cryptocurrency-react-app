@@ -1,0 +1,21 @@
+.table-crypto{
+    min-width: 500px;
+}
+.table-icons{
+    width: 40px
+}
+.table-text{
+    font-weight: 500;
+    font-size: 18px;
+}
+.coin-symbol{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size:20px;
+}
+.red{
+    color: red;
+}
+.green{
+    color: rgb(15, 226, 15);
+}

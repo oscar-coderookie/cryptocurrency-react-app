@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import './Coin.css'
+import './Coin.css';
+import { TablePagination } from "@material-ui/core";
+
 
 const Table = () => {
   const [coins, setCoins] = useState([]);
