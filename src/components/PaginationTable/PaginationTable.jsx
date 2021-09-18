@@ -9,7 +9,8 @@ import TableSortLabel from "@mui/material/TableSortLabel";
 import React, { useState, useEffect } from "react";
 import "./PaginationTable.css";
 import axios from "axios";
-import Pagination from "@mui/material/Pagination";
+import { TablePagination } from '@mui/material';
+import { TableBody } from "@mui/material";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -36,7 +37,7 @@ const PaginationTable = () => {
   const [orderDirection, setOrderDirection] = useState("asc");
   const [coins, setCoins] = useState([]);
   const [valuetoOrderBy, setValuetoOrderBy] = useState("name");
-  const [rowsPerPage, setRowsPerPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(15);
 
   const handleRequestSort = (event, property) => {
     const isAscending = valuetoOrderBy === property && orderDirection === "asc";
@@ -90,79 +91,93 @@ const PaginationTable = () => {
   };
 
   const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
+    setRowsPerPage(parseInt(event.target.value, 10))
     setPage(0);
   };
 
   return (
-    <TableContainer component={Paper}>
-      <Table className="table-crypto" size="small" aria-label="a dense table">
-        <TableHead>
-          <StyledTableRow>
-            <TableCell align="center">
-              <TableSortLabel
-                active={valuetoOrderBy === "name"}
-                direction={valuetoOrderBy === "name" ? orderDirection : "asc"}
-                onClick={createSortHandler("name")}
-              >
-                Moneda:
-              </TableSortLabel>
-            </TableCell>
-            <TableCell align="center">
-              <TableSortLabel
-                active={valuetoOrderBy === "symbol"}
-                direction={valuetoOrderBy === "symbol" ? orderDirection : "asc"}
-                onClick={createSortHandler("symbol")}
-              >
-                Símbolo:
-              </TableSortLabel>
-            </TableCell>
-            <TableCell align="center">
-              <TableSortLabel
-                active={valuetoOrderBy === "price"}
-                direction={valuetoOrderBy === "price" ? orderDirection : "asc"}
-                onClick={createSortHandler("price")}
-              >
-                Precio
-              </TableSortLabel>
-            </TableCell>
-            <TableCell align="center">
-            <TableSortLabel
-                active={valuetoOrderBy === "volume"}
-                direction={valuetoOrderBy === "volume" ? orderDirection : "asc"}
-                onClick={createSortHandler("volume")}
-              >
-                Volumen
-              </TableSortLabel>
-            </TableCell>
-            <TableCell align="center">Cambio de precio:</TableCell>
-            <TableCell align="center">Mkt Cap:</TableCell>
-          </StyledTableRow>
-        </TableHead>
-        {sortedRowInformation(coins, getComparator(orderDirection, valuetoOrderBy)).map((coin, index) => (
-          <StyledTableRow key={coin.name}>
-            <StyledTableCell align="center" className="table-names">
-              <img className="table-icons" src={coin.image} alt="logo" />
-              <p className="table-text">{coin.name}</p>
-            </StyledTableCell>
-            <StyledTableCell className="coin-symbol" align="center">
-              {coin.symbol}
-            </StyledTableCell>
-            <StyledTableCell align="center">€{coin.current_price}</StyledTableCell>
-            <StyledTableCell align="center">€{coin.total_volume.toLocaleString()}</StyledTableCell>
-            <StyledTableCell align="center">
-              {coin.price_change_percentage_24h < 0 ? (
-                <p className=" red">{coin.price_change_percentage_24h.toFixed(2)}%</p>
-              ) : (
-                <p className=" green">{coin.price_change_percentage_24h.toFixed(2)}%</p>
-              )}
-            </StyledTableCell>
-            <StyledTableCell align="center">€{coin.market_cap.toLocaleString()}</StyledTableCell>
-          </StyledTableRow>
-        ))}
-      </Table>
-      <Pagination count={10} />
-    </TableContainer>
+    <>
+      <TableContainer component={Paper}>
+        <Table className="table-crypto" size="small" aria-label="a dense table">
+          <TableHead>
+            <StyledTableRow>
+              <TableCell align="center">
+                <TableSortLabel
+                  active={valuetoOrderBy === "name"}
+                  direction={valuetoOrderBy === "name" ? orderDirection : "asc"}
+                  onClick={createSortHandler("name")}
+                >
+                  Moneda:
+                </TableSortLabel>
+              </TableCell>
+              <TableCell align="center">
+                <TableSortLabel
+                  active={valuetoOrderBy === "symbol"}
+                  direction={valuetoOrderBy === "symbol" ? orderDirection : "asc"}
+                  onClick={createSortHandler("symbol")}
+                >
+                  Símbolo:
+                </TableSortLabel>
+              </TableCell>
+              <TableCell align="center">
+                <TableSortLabel
+                  active={valuetoOrderBy === "price"}
+                  direction={valuetoOrderBy === "price" ? orderDirection : "asc"}
+                  onClick={createSortHandler("price")}
+                >
+                  Precio
+                </TableSortLabel>
+              </TableCell>
+              <TableCell align="center">
+                <TableSortLabel
+                  active={valuetoOrderBy === "volume"}
+                  direction={valuetoOrderBy === "volume" ? orderDirection : "asc"}
+                  onClick={createSortHandler("volume")}
+                >
+                  Volumen
+                </TableSortLabel>
+              </TableCell>
+              <TableCell align="center">Cambio de precio:</TableCell>
+              <TableCell align="center">Mkt Cap:</TableCell>
+            </StyledTableRow>
+          </TableHead>
+          <TableBody>
+          {sortedRowInformation(coins, getComparator(orderDirection, valuetoOrderBy))
+          .slice(page * rowsPerPage, page *rowsPerPage + rowsPerPage)
+          .map((coin, index) => (
+            <StyledTableRow key={index}>
+              <StyledTableCell align="center" className="table-names">
+                <img className="table-icons" src={coin.image} alt="logo" />
+                <p className="table-text">{coin.name}</p>
+              </StyledTableCell>
+              <StyledTableCell className="coin-symbol" align="center">
+                {coin.symbol}
+              </StyledTableCell>
+              <StyledTableCell align="center">€{coin.current_price}</StyledTableCell>
+              <StyledTableCell align="center">€{coin.total_volume.toLocaleString()}</StyledTableCell>
+              <StyledTableCell align="center">
+                {coin.price_change_percentage_24h < 0 ? (
+                  <p className=" red">{coin.price_change_percentage_24h.toFixed(2)}%</p>
+                ) : (
+                  <p className=" green">{coin.price_change_percentage_24h.toFixed(2)}%</p>
+                )}
+              </StyledTableCell>
+              <StyledTableCell align="center">€{coin.market_cap.toLocaleString()}</StyledTableCell>
+            </StyledTableRow>
+          ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <TablePagination
+        rowsPerPageOptions={[10,20,50]}
+        component="div"
+        count={coins.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+      />
+    </>
   );
 };
 
