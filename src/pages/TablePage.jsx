@@ -5,7 +5,6 @@ const TablePage = () => {
 
   return (
     <div className="table">
-      
       <h1>CryptoMarket:</h1>
       <PaginationTable/>
     </div>

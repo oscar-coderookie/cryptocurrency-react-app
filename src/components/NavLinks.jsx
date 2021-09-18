@@ -15,13 +15,14 @@ const NavLinks = ({show}) => {
           <NavLink className="navbar-links" to="/market">Market</NavLink>
         </li>
         <li>
-          <NavLink className="navbar-links" to="/">Contact</NavLink>
+          <NavLink className="navbar-links" to="/contact">Contact</NavLink>
   
         </li>
         <li>
           <NavLink className="navbar-links" to="/">Register</NavLink>
        
         </li>
+        
       </ul>
     </div>
   );

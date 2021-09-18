@@ -1,12 +1,16 @@
-.table-crypto{
+.table-container{
+    width:1200px;
     min-width: 500px;
 }
+
 .table-icons{
     width: 40px
 }
 .table-text{
     font-weight: 500;
     font-size: 18px;
+    margin: 0;
+    margin-left: 6px;
 }
 .coin-symbol{
     text-transform: uppercase;
@@ -18,4 +22,8 @@
 }
 .green{
     color: rgb(15, 226, 15);
+}
+.table-names{
+    display: flex;
+    align-items: center;
 }

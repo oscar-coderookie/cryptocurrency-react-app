@@ -37,7 +37,7 @@ const PaginationTable = () => {
   const [orderDirection, setOrderDirection] = useState("asc");
   const [coins, setCoins] = useState([]);
   const [valuetoOrderBy, setValuetoOrderBy] = useState("name");
-  const [rowsPerPage, setRowsPerPage] = useState(15);
+  const [rowsPerPage, setRowsPerPage] = useState(20);
 
   const handleRequestSort = (event, property) => {
     const isAscending = valuetoOrderBy === property && orderDirection === "asc";
@@ -97,7 +97,7 @@ const PaginationTable = () => {
 
   return (
     <>
-      <TableContainer component={Paper}>
+      <TableContainer  className="container-xl p-0 m-0" component={Paper}>
         <Table className="table-crypto" size="small" aria-label="a dense table">
           <TableHead>
             <StyledTableRow>
@@ -167,7 +167,6 @@ const PaginationTable = () => {
           ))}
           </TableBody>
         </Table>
-      </TableContainer>
       <TablePagination
         rowsPerPageOptions={[10,20,50]}
         component="div"
@@ -177,6 +176,7 @@ const PaginationTable = () => {
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
+      </TableContainer>
     </>
   );
 };

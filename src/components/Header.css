@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: flex-start;
   height: 8vh;
-  background: black;
+  background:linear-gradient(to right, #232526, #414345);
   z-index: 10;
 }
 .header-logo {
@@ -31,12 +31,12 @@
 
 @keyframes shinyLogo {
   0% {
-    filter: drop-shadow(0px 0px 3px white);
+    filter: drop-shadow(0px 0px 8px white);
   }
   50% {
-    filter: drop-shadow(0px 0px 20px white);
+    filter: drop-shadow(1px 1px 20px white);
   }
   100% {
-    filter: drop-shadow(0px 0px 2px white);
+    filter: drop-shadow(0px 0px 8px white);
   }
 }
