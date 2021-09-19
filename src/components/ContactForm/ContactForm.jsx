@@ -1,5 +1,6 @@
 import "./ContactForm.css";
 import React from "react";
+import { Button } from "..";
 
 const ContactForm = () => {
   return (
@@ -27,7 +28,7 @@ const ContactForm = () => {
           <span className="focus-input"></span>
         </div>
         <div className="form-btn-group">
-          <button className="form-btn">Enviar</button>
+          <Button title="Enviar" fontColor="white" gradColor1="#f16100" gradColor2="#ffe600" direction="235deg" width="100%"/>
         </div>
       </form>
     </div>

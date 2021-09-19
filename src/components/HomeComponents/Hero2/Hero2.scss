@@ -83,13 +83,16 @@
       justify-content: center;
       transform: translateY(-50%)
 
-      
-
       }
       &:hover{
         top: 1%;
 
 
       }
+  }
+  @media (max-width: 765px) {
+    height: auto;
+    padding: 40px 0px;
+    
   }
 }

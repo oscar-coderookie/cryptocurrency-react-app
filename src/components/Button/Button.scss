@@ -1,0 +1,21 @@
+.btn-grad {
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  background-size: 200% auto;
+  color: white;
+  background-size: 200%;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 25px;
+  display: block;
+  font-size: 20px;
+  margin-bottom: 10px;
+  border: none;
+
+  &:hover { 
+    color: #fff;
+    background-position: center left;
+  }
+  
+}

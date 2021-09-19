@@ -4,7 +4,7 @@ import "./Header.css";
 import logo from "../img/logo2.png";
 import NavLinks from "./NavLinks";
 
-const Header = () => {
+const Header = ({onLogout, hasUser}) => {
 
   const [open, setOpen] = useState(false);
 
@@ -22,7 +22,7 @@ const Header = () => {
         </div>
         
       </div>
-       <NavLinks show={open} />
+       <NavLinks show={open} onLogout={onLogout} hasUser={hasUser}/>
     </div>
   );
 };

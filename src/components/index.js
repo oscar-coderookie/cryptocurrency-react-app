@@ -7,7 +7,25 @@ import CardContact from "./CardContact/CardContact";
 import ContactForm from "./ContactForm/ContactForm";
 import Footer from "./Footer/Footer";
 import Hero1 from "./HomeComponents/Hero1/Hero1";
-import Hero2 from './HomeComponents/Hero2/Hero2';
-import Hero3 from './HomeComponents/Hero3/Hero3'
+import Hero2 from "./HomeComponents/Hero2/Hero2";
+import Hero3 from "./HomeComponents/Hero3/Hero3";
+import LoadingComponent from "./LoadingComponent/LoadingComponent";
+import RegisterForm from "./RegisterForm/RegisterForm";
+import Button from './Button/Button';
 
-export { Navlinks, Header, Coin, Table, PaginationTable, CardContact, ContactForm, Footer, Hero1, Hero2 , Hero3};
+export {
+  Navlinks,
+  Header,
+  Coin,
+  Table,
+  PaginationTable,
+  CardContact,
+  ContactForm,
+  Footer,
+  Hero1,
+  Hero2,
+  Hero3,
+  LoadingComponent,
+  RegisterForm,
+  Button
+};
