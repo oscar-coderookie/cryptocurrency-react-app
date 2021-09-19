@@ -1,0 +1,48 @@
+.hero3 {
+  height: 100vh;
+  position: relative;
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+  }
+  &-title {
+    position: absolute;
+    bottom: 16%;
+    left: 10%;
+    width: 60%;
+    z-index: 6;
+
+    h1 {
+      color: white;
+      font-weight: 500;
+      filter: drop-shadow(1px 1px 4px black);
+    }
+  }
+
+  &-register-btn {
+    padding: 16px 20px;
+    font-size: 20px;
+    border: none;
+    font-weight: 500;
+    margin-top: 16px;
+    background-image: linear-gradient(to right, #fffb08 0%, #ffc837 51%, #fffb08 100%);
+    border-radius: 30px;
+    box-shadow: 0 0 20px #eee;
+    transition: 0.5s;
+    background-size: 200% auto;
+    cursor: pointer;
+
+    &:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: rgb(85, 85, 85);
+      font-size: 24px;
+      box-shadow: 0 0 30px #eee;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}
