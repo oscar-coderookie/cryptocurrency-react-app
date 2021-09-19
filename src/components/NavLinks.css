@@ -1,20 +1,21 @@
 .navbar{
-    background: rgba(0, 0, 0, 0.726);
-    width: 300px;
+    background:linear-gradient(to right, #232526d0, #414345d0);
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
     top:0;
     right:0;
     transition: all 0.4s ease;
-    height: 100vh;
+    height: 8vh;
     z-index: 1;
     opacity: 0;
+    transform: translateY(-100%);
     
 }
 .navbar.active{
-    opacity: 1
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .navbar-links{
@@ -30,11 +31,14 @@
 }
 .navbar-list{
     list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
-    flex-direction: column
+    justify-content: space-between;
 }
 
 .navbar-list li{
-    padding: 10px 0px;
+    padding: 10px;
+
 }

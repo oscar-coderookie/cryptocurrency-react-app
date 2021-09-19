@@ -97,7 +97,7 @@ const PaginationTable = () => {
 
   return (
     <>
-      <TableContainer  className="container-xl p-0 m-0" component={Paper}>
+      <TableContainer  className="container-xl p-0 mx-3" component={Paper}>
         <Table className="table-crypto" size="small" aria-label="a dense table">
           <TableHead>
             <StyledTableRow>
@@ -128,7 +128,7 @@ const PaginationTable = () => {
                   Precio
                 </TableSortLabel>
               </TableCell>
-              <TableCell align="center">
+              <TableCell className="d-none d-md-table-cell" align="center">
                 <TableSortLabel
                   active={valuetoOrderBy === "volume"}
                   direction={valuetoOrderBy === "volume" ? orderDirection : "asc"}
@@ -137,8 +137,8 @@ const PaginationTable = () => {
                   Volumen
                 </TableSortLabel>
               </TableCell>
-              <TableCell align="center">Cambio de precio:</TableCell>
-              <TableCell align="center">Mkt Cap:</TableCell>
+              <TableCell className="d-none d-md-table-cell" align="center">Cambio de precio:</TableCell>
+              <TableCell className="d-none d-md-table-cell" align="center">Mkt Cap:</TableCell>
             </StyledTableRow>
           </TableHead>
           <TableBody>
@@ -154,15 +154,15 @@ const PaginationTable = () => {
                 {coin.symbol}
               </StyledTableCell>
               <StyledTableCell align="center">€{coin.current_price}</StyledTableCell>
-              <StyledTableCell align="center">€{coin.total_volume.toLocaleString()}</StyledTableCell>
-              <StyledTableCell align="center">
+              <StyledTableCell className="d-none d-md-table-cell" align="center">€{coin.total_volume.toLocaleString()}</StyledTableCell>
+              <StyledTableCell className="d-none d-md-table-cell" align="center">
                 {coin.price_change_percentage_24h < 0 ? (
                   <p className=" red">{coin.price_change_percentage_24h.toFixed(2)}%</p>
                 ) : (
                   <p className=" green">{coin.price_change_percentage_24h.toFixed(2)}%</p>
                 )}
               </StyledTableCell>
-              <StyledTableCell align="center">€{coin.market_cap.toLocaleString()}</StyledTableCell>
+              <StyledTableCell className="d-none d-md-table-cell" align="center">€{coin.market_cap.toLocaleString()}</StyledTableCell>
             </StyledTableRow>
           ))}
           </TableBody>
