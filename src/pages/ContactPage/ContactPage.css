@@ -1,0 +1,15 @@
+.contact-page{
+    width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #343335;
+  background: linear-gradient(45deg, #f16100, #ffe600);
+  padding: 120px 0px;
+}

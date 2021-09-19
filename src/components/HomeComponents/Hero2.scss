@@ -1,0 +1,45 @@
+.hero2 {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%),
+    radial-gradient(at top center, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 120%) #989898;
+  background-blend-mode: multiply, multiply;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+
+  &-card{
+    background: linear-gradient(45deg, rgb(36, 35, 35), rgb(27, 27, 27),  rgb(36, 35, 35));
+    width: 250px;
+    height: 120px;
+    margin: 0px 10px;
+    border-radius:10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    filter: drop-shadow(0px 0px 6px white);
+    transition: all .3s ease;
+
+    &:hover{
+      filter: drop-shadow(0px 0px 30px white);
+      color: gold;
+
+      h3,span{
+        color: gold
+      }
+    }
+    
+    h3{
+      color: rgb(241, 241, 241);
+      font-size: 18px;
+      margin: 0;
+    }
+
+    span{
+      font-size: 50px;
+      text-align: center;
+      color: rgb(241, 241, 241);
+    }
+  }
+}

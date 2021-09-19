@@ -1,10 +1,10 @@
 import './ContactPage.css';
-import React from 'react'
-import ContactForm from '../../components/ContactForm/ContactForm';
+import React from 'react';
+import { CardContact, ContactForm } from '../../components';
 
 const ContactPage = () => {
     return (
-        <div>
+        <div className="contact-page">
             <ContactForm/>
         </div>
     )

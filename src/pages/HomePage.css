@@ -4,7 +4,7 @@ width:100%
   
 }
 .home-hero{
-  height:92vh
+  height:100vh;
 }
 
 .home-img {
@@ -43,6 +43,9 @@ width:100%
 
 .home-register-btn:hover {
   background-position: right center; /* change the direction of the change here */
-  color: #fff;
+  color: rgb(85, 85, 85);
+  font-size: 24px;
+  box-shadow: 0 0 30px #eee;
   text-decoration: none;
+  text-transform: uppercase;
 }

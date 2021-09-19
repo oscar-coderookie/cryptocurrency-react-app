@@ -1,6 +1,7 @@
 .table{
     display: flex;
     margin: 0;
+    padding-top: 100px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
