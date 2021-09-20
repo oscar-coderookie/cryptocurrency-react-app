@@ -2,7 +2,7 @@ import "./App.scss";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import { Header, Footer, LoadingComponent } from "./components";
 import MarketPage from "./pages/MarketPage/MarketPage";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import { Suspense, useState, useEffect } from "react";
