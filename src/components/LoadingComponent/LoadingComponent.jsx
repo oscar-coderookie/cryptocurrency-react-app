@@ -7,6 +7,7 @@ const LoadingComponent = () => {
     return (
         <div className="loading">
             <img className="loading__logo" src={Logo2} alt="logo2" />
+            <h1>Cargando...</h1>
         </div>
     )
 }

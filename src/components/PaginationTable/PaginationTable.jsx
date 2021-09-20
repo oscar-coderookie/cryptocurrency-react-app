@@ -97,7 +97,7 @@ const PaginationTable = () => {
 
   return (
     <>
-      <TableContainer  className="container-xl p-0 mx-3" component={Paper}>
+      <TableContainer className="container-xl p-0 mx-3 my-4" component={Paper}>
         <Table className="table-crypto" size="small" aria-label="a dense table">
           <TableHead>
             <StyledTableRow>

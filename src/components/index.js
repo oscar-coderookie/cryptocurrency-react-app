@@ -12,6 +12,7 @@ import Hero3 from "./HomeComponents/Hero3/Hero3";
 import LoadingComponent from "./LoadingComponent/LoadingComponent";
 import RegisterForm from "./RegisterForm/RegisterForm";
 import Button from './Button/Button';
+import TrendingCoinCard from "./TrendingCoinCard/TrendingCoinCard";
 
 export {
   Navlinks,
@@ -27,5 +28,6 @@ export {
   Hero3,
   LoadingComponent,
   RegisterForm,
-  Button
+  Button,
+  TrendingCoinCard
 };

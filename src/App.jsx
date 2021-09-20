@@ -1,7 +1,7 @@
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import { Header, Footer, LoadingComponent } from "./components";
-import TablePage from "./pages/TablePage";
+import MarketPage from "./pages/MarketPage/MarketPage";
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
@@ -11,6 +11,7 @@ import { auth } from "./config/firebase";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     auth.onAuthStateChanged((currentUser) => {
@@ -19,6 +20,7 @@ function App() {
       } else {
         setUser(null);
       }
+      setLoading(false);
     });
   }, []);
 
@@ -33,12 +35,12 @@ function App() {
       <div className="App">
         <Header hasUser={!!user} onLogout={() => handleLogout()} />
         <Suspense fallback={<LoadingComponent />}>
-          <Switch>
+        {loading ? (<LoadingComponent/>) : (<Switch>
             <Route exact path="/">
               {user ? <HomePage userId={user.uid} /> : <RegisterPage onLogin={setUser} />}
             </Route>
             <Route exact path="/market">
-              {user ? <TablePage /> : <Redirect to="/" />}
+              {user ? <MarketPage /> : <Redirect to="/" />}
             </Route>
             <Route exact path="/contact">
               {user ? <ContactPage /> : <Redirect to="/" />}
@@ -46,7 +48,7 @@ function App() {
             <Route exact path="/register">
               <RegisterPage onLogin={setUser} />
             </Route>
-          </Switch>
+          </Switch>)}
         </Suspense>
 
         <Footer />
