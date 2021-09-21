@@ -1,0 +1,42 @@
+.user-menu {
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+  width: auto;
+
+  span {
+    font-size: 26px;
+    margin-right: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: linear-gradient(62deg, #986a02 0%, #dcb344 22%, #ffe898 48%, #dcb344 75%, #a47204 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200%;
+      animation: moveGrad linear infinite;
+    }
+  }
+
+  @keyframes moveGrad {
+      0%{
+          background-position: center;
+      }
+      100%{
+          background-position:left;
+      }
+  }
+}
+
+.config{
+    transform: translateX(140%);
+    transition: all .3s ease-in;
+    opacity: 0;
+
+    &-active{
+        transform: translateX(0%);
+        transition: all .3s ease;
+        opacity: 1;
+        
+    }
+}

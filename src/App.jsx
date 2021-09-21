@@ -37,7 +37,7 @@ function App() {
         <Suspense fallback={<LoadingComponent />}>
         {loading ? (<LoadingComponent/>) : (<Switch>
             <Route exact path="/">
-              {user ? <HomePage userId={user.uid} /> : <RegisterPage onLogin={setUser} />}
+              {user ? <HomePage userId={user.uid} user={user} /> : <RegisterPage onLogin={setUser} />}
             </Route>
             <Route exact path="/market">
               {user ? <MarketPage /> : <Redirect to="/" />}

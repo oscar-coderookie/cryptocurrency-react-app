@@ -1,5 +1,5 @@
-import Navlinks from "./NavLinks";
-import Header from "./Header";
+import Navlinks from "./NavLinks/NavLinks";
+import Header from "./Header/Header";
 import Coin from "./Coin";
 import Table from "./Table";
 import PaginationTable from "./PaginationTable/PaginationTable";
@@ -13,6 +13,8 @@ import LoadingComponent from "./LoadingComponent/LoadingComponent";
 import RegisterForm from "./RegisterForm/RegisterForm";
 import Button from './Button/Button';
 import TrendingCoinCard from "./TrendingCoinCard/TrendingCoinCard";
+import CountrySelector from "./CountrySelector/CountrySelector";
+import UserMenu from "./UserMenu/UserMenu";
 
 export {
   Navlinks,
@@ -29,5 +31,7 @@ export {
   LoadingComponent,
   RegisterForm,
   Button,
-  TrendingCoinCard
+  TrendingCoinCard,
+  CountrySelector,
+  UserMenu
 };

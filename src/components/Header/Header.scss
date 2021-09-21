@@ -1,0 +1,46 @@
+.header-block {
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
+  z-index: 8;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8vh;
+  background: linear-gradient(to right, #232526d0, #414345d0);
+  z-index: 10;
+
+  &-menu {
+    color: white;
+    right: 0;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    font-size: 30px;
+    transition: all 0.2s ease;
+    z-index: 10;
+    
+  }
+
+  &-logo {
+    height: 4vh;
+    margin-left: 30px;
+    animation: shinyLogo 5s ease infinite;
+    z-index: 7;
+  }
+  
+}
+
+@keyframes shinyLogo {
+  0% {
+    filter: drop-shadow(0px 0px 8px white);
+  }
+  50% {
+    filter: drop-shadow(1px 1px 20px white);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 8px white);
+  }
+}

@@ -2,6 +2,7 @@ import "./Hero3.scss";
 
 import React from "react";
 import './Hero3.scss';
+import { NavLink } from "react-router-dom";
 
 const Hero3 = () => {
   return (
@@ -13,7 +14,10 @@ const Hero3 = () => {
           "Regístrate ahora y haz parte de el gran mercado de criptomonedas, llévate los primeros Cryptunes totalmente
           gratis"
         </h1>
-        <button className="hero3-register-btn">Registro</button>
+        <NavLink to="/register">
+           <button className="hero3-register-btn">Registro</button>
+        </NavLink>
+       
       </div>
     </div>
   );

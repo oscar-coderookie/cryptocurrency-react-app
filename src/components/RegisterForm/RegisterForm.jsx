@@ -1,7 +1,9 @@
 import "./RegisterForm.scss";
 import { Button } from "./../../components";
 import React, { useState } from "react";
-import {  firebase } from "../../config/firebase";
+import { firebase } from "../../config/firebase";
+import { Alert } from "@material-ui/core";
+import CountrySelect from "../CountrySelector/CountrySelector";
 
 const RegisterForm = ({ onLogin }) => {
   const [values, setValues] = useState({});
@@ -49,6 +51,7 @@ const RegisterForm = ({ onLogin }) => {
   return (
     <div className="container-xl">
       <div className="row">
+      {isLogin ? <h1 className="register-form__title">Inicio de Sesión:</h1> : <h1 className="register-form__title">Registro:</h1>}
         <div className="col-10 col-md-6 mx-auto">
           <form className="register-form" onSubmit={handleSubmit}>
             <fieldset className="register-form__fields mb-3 w-100">
@@ -69,8 +72,22 @@ const RegisterForm = ({ onLogin }) => {
               <div id="emailHelp" className="form-text">
                 Mínimo 6 caracteres 1 mayúscula y 1 número.
               </div>
+              {error ? <Alert severity="error">{error}</Alert> : null}
             </fieldset>
-            {error ? <p color="red">{error}</p> : null}
+
+            {isLogin ? null : (
+              <div>
+                <fieldset className="register-form__fields mb-3 w-100">
+                  <label className="register-form__label form-label">Pais de origen:</label>
+                  <CountrySelect />
+                </fieldset>
+                <fieldset className="register-form__fields mb-3 w-100">
+                  <label className="register-form__label form-label">Número móvil:</label>
+                  <input className="register-form__input " name="phone" type="tel"  onChange={handleInput} />
+                </fieldset>
+              </div>
+            )}
+
             <Button
               title={isLogin ? "Iniciar sesión" : "Registrarme"}
               width="100%"

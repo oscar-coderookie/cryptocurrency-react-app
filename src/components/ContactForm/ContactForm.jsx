@@ -1,10 +1,10 @@
-import "./ContactForm.css";
+import "./ContactForm.scss";
 import React from "react";
 import { Button } from "..";
 
 const ContactForm = () => {
   return (
-    <div className="contact-container">
+    <div className="form-container">
       <form className="form-contact">
         <h1 className="form-title">Quieres solicitar mas información? Envíanos un Mensaje...</h1>
         <div className="form-input-group">

@@ -54,4 +54,10 @@
         font-size: 12px;
         letter-spacing: 2px;
     }
+
+    @media (max-width: 425px) {
+         span{
+             display: none;
+         }
+    }
 }

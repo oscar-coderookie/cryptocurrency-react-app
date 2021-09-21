@@ -1,15 +1,20 @@
 .trending-section{
-    height: 100vh;
     width: 100%;
     background: url('../../../img/trending.jpg');
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
+
 
     &__legend{
         color: white;
         font-weight: 400;
     }
   
+
+    @media (max-width: 425px) {
+        height: auto;
+    }
 
 }

@@ -22,6 +22,7 @@
         background: linear-gradient(45deg,  #947051 0, #a98359 16.67%, #eed077 33.33%, #d8b46c 50%, #c09a62 66.67%, #a98359 83.33%, #947051 100%);
         -webkit-background-clip: text;
         color: transparent;
+       
         font-weight: 700;
         text-transform: uppercase;
         filter: drop-shadow(0px 0px 2px white);
@@ -29,8 +30,24 @@
     &__legend{
         color: white;
         font-weight: 500;
+        text-align: center;
         font-size: 30px;
         text-shadow: 1px 1px 4px black;
+    }
+    &__salute{
+        color: white;
+        font-weight:400;
+        font-size: 26px;
+        text-align: center;
+    }
+
+    @media (max-width: 425px) {
+       
+        &__legend{
+            font-size:20px;
+            width:80%;
+        
+        }
     }
 }
 
