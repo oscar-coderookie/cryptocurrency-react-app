@@ -1,0 +1,55 @@
+.table {
+  display: flex;
+  align-items: center
+
+  &-crypto{
+    width: 80%;
+  }
+
+  &__head{
+    background-color: rgb(151, 151, 151);
+    
+  }
+
+  &__label{
+    color: white;
+  }
+  &-container {
+    width: 1200px;
+    min-width: 500px;
+    margin-bottom: 40px;
+  }
+  &__title{
+      margin: 0;
+      margin-left: 10px;
+      display:flex;
+      font-size:20px;
+      align-items: center;
+  }
+  &-icons {
+    width: 40px;
+  }
+  &-text {
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+    text-align: left;
+    margin-left: 6px;
+  }
+
+  &-names {
+    display: flex;
+    align-items: center;
+  }
+}
+.coin-symbol {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+}
+.red {
+  color: red;
+}
+.green {
+  color: rgb(15, 226, 15);
+}

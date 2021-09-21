@@ -7,10 +7,10 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import TableSortLabel from "@mui/material/TableSortLabel";
 import React, { useState, useEffect } from "react";
-import "./PaginationTable.css";
+import "./PaginationTable.scss";
 import axios from "axios";
-import { TablePagination } from '@mui/material';
-import { TableBody } from "@mui/material";
+import { TablePagination, TableBody } from "@mui/material";
+import SearchBar from "../SearchBar/SearchBar";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -38,6 +38,7 @@ const PaginationTable = () => {
   const [coins, setCoins] = useState([]);
   const [valuetoOrderBy, setValuetoOrderBy] = useState("name");
   const [rowsPerPage, setRowsPerPage] = useState(20);
+  const [search, setSearch] = useState("");
 
   const handleRequestSort = (event, property) => {
     const isAscending = valuetoOrderBy === property && orderDirection === "asc";
@@ -52,7 +53,7 @@ const PaginationTable = () => {
   useEffect(() => {
     axios
       .get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=250&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d"
       )
       .then((res) => {
         setCoins(res.data);
@@ -91,18 +92,30 @@ const PaginationTable = () => {
   };
 
   const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10))
+    setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const filteredCoins = coins.filter((coin) => coin.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <>
       <TableContainer className="container-xl p-0 mx-3 my-4" component={Paper}>
+        <div className="d-flex justify-content-around flex-wrap">
+          <h2 className="table__title">Mercado: listado de mercados</h2>
+          <SearchBar handleSearch={handleSearch} />
+        </div>
+
         <Table className="table-crypto" size="small" aria-label="a dense table">
-          <TableHead>
+          <TableHead className="table__head">
             <StyledTableRow>
               <TableCell align="center">
                 <TableSortLabel
+                className="table__label"
                   active={valuetoOrderBy === "name"}
                   direction={valuetoOrderBy === "name" ? orderDirection : "asc"}
                   onClick={createSortHandler("name")}
@@ -137,45 +150,53 @@ const PaginationTable = () => {
                   Volumen
                 </TableSortLabel>
               </TableCell>
-              <TableCell className="d-none d-md-table-cell" align="center">Cambio de precio:</TableCell>
-              <TableCell className="d-none d-md-table-cell" align="center">Mkt Cap:</TableCell>
+              <TableCell className="d-none d-md-table-cell" align="center">
+                Cambio de precio:
+              </TableCell>
+              <TableCell className="d-none d-md-table-cell" align="center">
+                Mkt Cap:
+              </TableCell>
             </StyledTableRow>
           </TableHead>
           <TableBody>
-          {sortedRowInformation(coins, getComparator(orderDirection, valuetoOrderBy))
-          .slice(page * rowsPerPage, page *rowsPerPage + rowsPerPage)
-          .map((coin, index) => (
-            <StyledTableRow key={index}>
-              <StyledTableCell align="center" className="table-names">
-                <img className="table-icons" src={coin.image} alt="logo" />
-                <p className="table-text">{coin.name}</p>
-              </StyledTableCell>
-              <StyledTableCell className="coin-symbol" align="center">
-                {coin.symbol}
-              </StyledTableCell>
-              <StyledTableCell align="center">€{coin.current_price}</StyledTableCell>
-              <StyledTableCell className="d-none d-md-table-cell" align="center">€{coin.total_volume.toLocaleString()}</StyledTableCell>
-              <StyledTableCell className="d-none d-md-table-cell" align="center">
-                {coin.price_change_percentage_24h < 0 ? (
-                  <p className=" red">{coin.price_change_percentage_24h.toFixed(2)}%</p>
-                ) : (
-                  <p className=" green">{coin.price_change_percentage_24h.toFixed(2)}%</p>
-                )}
-              </StyledTableCell>
-              <StyledTableCell className="d-none d-md-table-cell" align="center">€{coin.market_cap.toLocaleString()}</StyledTableCell>
-            </StyledTableRow>
-          ))}
+            {sortedRowInformation(filteredCoins, getComparator(orderDirection, valuetoOrderBy))
+              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              .map((coin, index) => (
+                <StyledTableRow key={index}>
+                  <StyledTableCell align="center" className="table-names">
+                    <img className="table-icons" src={coin.image} alt="logo" />
+                    <p className="table-text ">{coin.name}</p>
+                  </StyledTableCell>
+                  <StyledTableCell className="coin-symbol" align="center">
+                    {coin.symbol}
+                  </StyledTableCell>
+                  <StyledTableCell align="center">€{coin.current_price}</StyledTableCell>
+                  <StyledTableCell className="d-none d-md-table-cell" align="center">
+                    €{coin.total_volume.toLocaleString()}
+                  </StyledTableCell>
+                  <StyledTableCell className="d-none d-md-table-cell" align="center">
+                    {coin.price_change_percentage_24h < 0 ? (
+                      <p className=" red">{coin.price_change_percentage_24h.toFixed(2)}%</p>
+                    ) : (
+                      <p className=" green">{coin.price_change_percentage_24h.toFixed(2)}%</p>
+                    )}
+                  </StyledTableCell>
+                  <StyledTableCell className="d-none d-md-table-cell" align="center">
+                    €{coin.market_cap.toLocaleString()}
+                  </StyledTableCell>
+                </StyledTableRow>
+              ))}
           </TableBody>
         </Table>
-      <TablePagination
-        rowsPerPageOptions={[10,20,50]}
-        component="div"
-        count={coins.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
+        <TablePagination
+          rowsPerPageOptions={[10, 20, 50]}
+          component="div"
+          count={coins.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
       </TableContainer>
     </>
   );

@@ -15,17 +15,17 @@ const SectionTrending = () => {
       })
       .catch((error) => console.log(error));
   }, []);
-  console.log(arrayCoins);
+
 
   return (
     <section className="trending-section">
       <div className="container-xl">
-      <h1>Monedas más buscadas</h1>
+      <h1>Las 7 más buscadas</h1>
       <p className="trending-section__legend">Las 7 monedas más populares en  el criptomercado según las búsquedas de los usuarios en las últimas 24 horas (ordenadas por las más populares primero)</p>
         <div className="trending-section__cards row">
           {arrayCoins.map((coin) => {
             return (
-              <div className="col-10 col-md-4 col-lg-3 mx-auto">
+              <div className="col-10 col-md-6 col-lg-3 mx-auto" key={coin.item.id}>
                 <TrendingCoinCard 
                 coinName={coin.item.id} 
                 coinImg={coin.item.small}

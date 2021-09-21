@@ -6,15 +6,32 @@
     justify-content: center;
     height: 100vh;
 
+    h1{
+        color: white;
+        text-align: center;
+    }
+
 
     &__legend{
         color: white;
         font-weight: 400;
+        text-align: center;
     }
   
 
     @media (max-width: 425px) {
         height: auto;
+        padding: 20px 0px;
+
+        &__legend{
+            font-size:14px;
+            font-weight: 300;
+        }
+
+        h1{
+            font-size:20px;
+
+        }
     }
 
 }

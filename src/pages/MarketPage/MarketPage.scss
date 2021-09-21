@@ -5,17 +5,17 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: linear-gradient(135deg, #52e5e7 10%, #130cb7 100%);
   
   &__legend{
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     font-size: 18px;
   }
-  h1 {
+  &__title {
     text-transform: uppercase;
     font-weight: 600;
-    color: white;
+    color: rgb(0, 0, 0);
+    text-align: center;
     padding: 20px 0px;
   }
 }

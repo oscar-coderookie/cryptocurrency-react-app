@@ -1,0 +1,43 @@
+.exchange-card{
+    display: flex;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.04);
+    margin: 10px 0px;
+    padding: 6px;
+    border-radius: 8px;
+
+
+    &__image{
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        p{
+            margin: 0;
+            margin-left: 2px;
+            
+        }
+
+        img{
+            width: 40px;
+            border-radius:4px;
+        }
+     
+    }
+
+    &__info{
+        flex: 2;
+        display: flex;
+        justify-content:space-between;
+        flex-wrap: wrap;
+        
+    }
+    &__country{
+        margin: 0;
+        display: flex;
+        align-items: center;
+        margin-right: 4px;
+        font-size:14px;
+        
+    }
+}

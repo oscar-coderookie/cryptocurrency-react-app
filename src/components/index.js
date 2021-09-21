@@ -1,7 +1,6 @@
 import Navlinks from "./NavLinks/NavLinks";
 import Header from "./Header/Header";
-import Coin from "./Coin";
-import Table from "./Table";
+import Coin from "./Coin/Coin";
 import PaginationTable from "./PaginationTable/PaginationTable";
 import CardContact from "./CardContact/CardContact";
 import ContactForm from "./ContactForm/ContactForm";
@@ -15,12 +14,13 @@ import Button from './Button/Button';
 import TrendingCoinCard from "./TrendingCoinCard/TrendingCoinCard";
 import CountrySelector from "./CountrySelector/CountrySelector";
 import UserMenu from "./UserMenu/UserMenu";
+import SearchBar from "./SearchBar/SearchBar";
+import ExchangeCard from "./ExchangeCard/ExchangeCard";
 
 export {
   Navlinks,
   Header,
   Coin,
-  Table,
   PaginationTable,
   CardContact,
   ContactForm,
@@ -33,5 +33,7 @@ export {
   Button,
   TrendingCoinCard,
   CountrySelector,
-  UserMenu
+  UserMenu,
+  SearchBar,
+  ExchangeCard
 };

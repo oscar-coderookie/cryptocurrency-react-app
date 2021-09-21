@@ -1,0 +1,33 @@
+.search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px ;
+    
+
+    &__input{
+        background: rgb(236, 236, 236);
+        border: none !important;
+        padding: 4px;
+        line-height:1.5;
+        margin-left: 3px;
+        border-radius: 12px;
+
+        &:focus{
+            background:rgb(236, 236, 236);
+        }
+        
+    }
+    &__icon{
+        
+        font-size:24px;
+        right:0;
+        margin-left: 4px;
+        color: rgb(160, 160, 160);
+
+        &:hover{
+            filter: none;
+            color: rgb(199, 199, 199);
+        }
+    }
+}
