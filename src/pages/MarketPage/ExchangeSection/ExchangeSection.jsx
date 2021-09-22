@@ -1,13 +1,13 @@
 import "./ExchangeSection.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { ExchangeCard } from "../../../components";
-import { Pagination } from "@mui/material";
+import { SkeletonMaterial, PaginationComponent } from "../../../components";
+import { Stack } from "@mui/material";
 
 const ExchangeSection = () => {
   const [data, setData] = useState([]);
-  const [page, setPage] = useState(1);
-  const [rowsPerPage, setRowsPerPage] = useState(20);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
 
   useEffect(() => {
     axios
@@ -20,35 +20,35 @@ const ExchangeSection = () => {
       });
   }, []);
 
-  const handleChangePage = (event, value) => {
-    setPage(value);
-  };
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
 
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-  
-  <div className="exchange-section container-xl">
-    {data.map((coin)=> {
-        return ( 
-          <ExchangeCard 
-          key={coin.id} 
-          title={coin.name} 
-          imageURL={coin.image}
-          country={coin.country}
-          yearFoundation={coin.year_established}
-          trustRank={coin.trust_score_rank}
-          webURL={coin.url}
-          />
-          ) 
-    })}
-    <Pagination 
-    count={data.length}
-    color="primary"
-    onChange={handleChangePage}
-    page={page}
-    />
-  </div>
-  )
+    <Stack className="exchange-section container-xl">
+      <div className="row">
+      <h1>Exchanges: compañias de criptomercado</h1>
+        {currentPosts.map((coin) => {
+          return (
+            <div className="col-10 col-sm-6 col-md-4 col-lg-3 mx-auto" key={coin.id}>
+              <SkeletonMaterial
+                title={coin.name}
+                imageURL={coin.image}
+                country={coin.country}
+                yearFoundation={coin.year_established}
+                trustRank={coin.trust_score_rank}
+                webURL={coin.url}
+              />
+            </div>
+          );
+        })}
+
+        <PaginationComponent postsPerPage={postsPerPage} totalPosts={data.length} paginate={paginate} />
+      </div>
+    </Stack>
+  );
 };
 
 export default ExchangeSection;

@@ -16,6 +16,8 @@ import CountrySelector from "./CountrySelector/CountrySelector";
 import UserMenu from "./UserMenu/UserMenu";
 import SearchBar from "./SearchBar/SearchBar";
 import ExchangeCard from "./ExchangeCard/ExchangeCard";
+import SkeletonMaterial from "./SkeletonMaterial/SkeletonMaterial";
+import PaginationComponent from "./PaginationComponent/PaginationComponent";
 
 export {
   Navlinks,
@@ -35,5 +37,7 @@ export {
   CountrySelector,
   UserMenu,
   SearchBar,
-  ExchangeCard
+  ExchangeCard,
+  SkeletonMaterial,
+  PaginationComponent
 };

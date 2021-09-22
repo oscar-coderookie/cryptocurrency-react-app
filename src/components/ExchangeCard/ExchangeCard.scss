@@ -28,12 +28,13 @@
     &__info{
         flex: 2;
         display: flex;
-        justify-content:space-between;
+        justify-content: center;
         flex-wrap: wrap;
         
     }
     &__country{
         margin: 0;
+        padding: 0px 20px ;
         display: flex;
         align-items: center;
         margin-right: 4px;

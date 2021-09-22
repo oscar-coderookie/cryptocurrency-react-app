@@ -1,0 +1,33 @@
+.pagination{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+
+    &-item{
+        font-weight: 500;
+        border: 2px solid rgba(161, 161, 161, 0.418);
+        width: 26px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: 0px 2px;
+        border-radius:8px;
+        color: gray;
+        cursor: pointer;
+
+        &:hover{
+            background: rgba(121, 121, 121, 0.616);
+            color: white
+        }
+        &:visited{
+            background: rgba(121, 121, 121, 0.616);
+        }
+    }
+    &-icon{
+        cursor: pointer;
+        margin: 0;
+        
+    }
+}

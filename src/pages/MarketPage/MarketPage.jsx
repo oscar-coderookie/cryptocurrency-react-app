@@ -11,7 +11,7 @@ const MarketPage = () => {
       <h1 className="market__title">CryptoMarket:</h1>
       <p className="market__legend">Busca entre más de 100 critptomonedas disponibles y mira su información financiera y bursátil en tiempo real:</p>
       <PaginationTable />
-      <ExchangeSection />
+      <ExchangeSection/>
       <SectionTrending />
     </div>
   );
