@@ -1,33 +1,67 @@
-.pagination{
-    width: 100%;
+.pagination {
+
+  &-list {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px 0px;
+    margin: 0;
+  }
 
-    &-item{
-        font-weight: 500;
-        border: 2px solid rgba(161, 161, 161, 0.418);
-        width: 26px;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        margin: 0px 2px;
-        border-radius:8px;
-        color: gray;
-        cursor: pointer;
+  &-block {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
 
-        &:hover{
-            background: rgba(121, 121, 121, 0.616);
-            color: white
-        }
-        &:visited{
-            background: rgba(121, 121, 121, 0.616);
+  &-options {
+    display: flex;
+    height: 30px;
+    margin-left: 100px;
+    
+
+    select{
+        border: none;
+        border-radius: 8px;
+        border: 3px solid rgba(128, 128, 128, 0.651);
+
+        option{
+          border: 3px solid rgba(128, 128, 128, 0.651);
         }
     }
-    &-icon{
-        cursor: pointer;
-        margin: 0;
-        
+
+    p {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      margin-right: 6px;
     }
+  }
+  &-item {
+    font-weight: 500;
+    border: 2px solid rgba(161, 161, 161, 0.418);
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0px 2px;
+    border-radius: 8px;
+    color: rgba(128, 128, 128, 0.774);
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(121, 121, 121, 0.616);
+      color: white;
+    }
+    &:visited {
+      background: rgba(121, 121, 121, 0.616);
+    }
+  }
+  &-icon {
+    cursor: pointer;
+    margin: 0;
+  }
 }

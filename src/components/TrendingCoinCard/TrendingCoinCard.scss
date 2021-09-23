@@ -5,6 +5,7 @@
   border-radius: 8px;
   margin: 10px 0px;
   z-index: 20;
+  background:linear-gradient(0deg, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 50%, rgba(182,141,76,1) 51%, rgba(233,212,179,1) 100%);
 
   &:hover{
 
@@ -15,7 +16,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: antiquewhite;
+    color: rgb(82, 82, 82);
 
     span {
       font-weight: 600;
@@ -37,14 +38,14 @@
       text-align: center;
       margin-left: 4px;
       font-weight: 600;
-      color: antiquewhite;
+      color:rgb(82, 82, 82);
       text-transform: capitalize;
     }
     p{
         text-align: right;
         margin: 0;
         font-weight: 500;
-        color: rgb(131, 218, 0);
+        color: rgb(82, 82, 82);
     }
   }
 

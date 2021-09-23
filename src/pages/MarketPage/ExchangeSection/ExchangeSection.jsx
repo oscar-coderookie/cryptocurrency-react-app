@@ -7,7 +7,7 @@ import { Stack } from "@mui/material";
 const ExchangeSection = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  const [postsPerPage, setPostsPerPage] = useState(10);
 
   useEffect(() => {
     axios
@@ -32,7 +32,7 @@ const ExchangeSection = () => {
       <h1>Exchanges: compañias de criptomercado</h1>
         {currentPosts.map((coin) => {
           return (
-            <div className="col-10 col-sm-6 col-md-4 col-lg-3 mx-auto" key={coin.id}>
+            <div className="col-10 col-sm-6 col-md-4 col-lg-3 mx-auto my-2" key={coin.id}>
               <SkeletonMaterial
                 title={coin.name}
                 imageURL={coin.image}
@@ -45,7 +45,7 @@ const ExchangeSection = () => {
           );
         })}
 
-        <PaginationComponent postsPerPage={postsPerPage} totalPosts={data.length} paginate={paginate} />
+        <PaginationComponent postsPerPage={postsPerPage} totalPosts={data.length} paginate={paginate} setPostsPerPage={setPostsPerPage} />
       </div>
     </Stack>
   );

@@ -1,24 +1,38 @@
 
-import React from 'react'
+
 import './PaginationComponent.scss';
 
-const PaginationComponent = ({postsPerPage, totalPosts, paginate}) => {
+const PaginationComponent = ({postsPerPage, totalPosts, paginate, setPostsPerPage}) => {
     const pageNumbers = [];
+
+    const handleChangePage = (e) => {
+        setPostsPerPage(e.target.value);
+    }
 
     for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
         pageNumbers.push(i);
     }
     return (
-        <div>
-            <ul className="pagination">
+        <div className="pagination-block">
+            <ul className="pagination-list">
                 {pageNumbers.map((number)=> (
-                    <li key={number} className="pagination-item">
-                        <p className="pagination-icon" onClick={() => paginate(number)}>
+                    <li key={number} className="pagination-item" onClick={() => paginate(number)}>
+                        <p className="pagination-icon" >
                             {number}
                         </p>
                     </li>
                 ))}
             </ul>
+            <div className="pagination-options">
+            <p>Resultados por página:  </p>
+              <select onChange={ handleChangePage}>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+            </select>  
+            </div>
+            
         </div>
     )
 }

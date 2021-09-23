@@ -4,7 +4,7 @@ import "./SkeletonMaterial.scss";
 
 const SkeletonMaterial = ({ imageURL, title, country, yearFoundation, trustRank, webURL }) => {
   return (
-    <Stack className="skeleton">
+    <Stack className={trustRank <= 10 ? "skeleton skeleton-rank-green" : "skeleton"}>
       <Box className="skeleton-header">
         <Avatar src={imageURL} width={60} height={60} />
         <Typography>{title}</Typography>
