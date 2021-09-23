@@ -1,5 +1,6 @@
 .navbar {
-  background: linear-gradient(to right, #232526d0, #414345d0);
+  background-color: #acff7e;
+  background-image: linear-gradient(360deg, #acff7e 0%, #cdfeaa 43%, #90ff4f 100%);
   width: 100%;
   display: flex;
   align-items: center;
@@ -13,14 +14,15 @@
   transform: translateY(-100%);
 
   &-links {
-    color: white;
+    color: #437A16;
     text-transform: uppercase;
     text-decoration: none;
     padding: 10px 0px;
+    font-weight: 600;
     transition: all 0.3s ease;
 
     &:hover {
-      color: gold;
+      color: rgb(97, 97, 97);
     }
   }
 
@@ -37,21 +39,18 @@
     }
   }
   @media (max-width: 425px) {
-    
-      &-links {
-        padding: 4px 0px;
-        font-size: 12px;
-      }
-      &-list{
-          justify-content: center;
-          margin: 0px 6px;
+    &-links {
+      padding: 4px 0px;
+      font-size: 12px;
+    }
+    &-list {
+      justify-content: center;
+      margin: 0px 6px;
 
-          li{
-              padding: 4px;
-              
-          }
+      li {
+        padding: 4px;
       }
-    
+    }
   }
 }
 .navbar.active {

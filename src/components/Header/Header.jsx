@@ -16,7 +16,7 @@ const Header = ({ onLogout, hasUser, user }) => {
         <div className="header-right-container"></div>
         <div className="header-menu">
           {hasUser ? <UserMenu hasUser={hasUser} user={user}/> :  null }
-          <Hamburger toggled={open} toggle={setOpen} onClick={() => setOpen(!open)} color="#fff" />
+          <Hamburger  toggled={open} toggle={setOpen} onClick={() => setOpen(!open)} color="#437A16" />
         </div>
       </div>
       <NavLinks show={open} onLogout={onLogout} hasUser={hasUser} />

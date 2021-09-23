@@ -10,19 +10,19 @@ const Footer = () => {
           <div className="col-10 col-md-6 mx-auto my-4 ">
             <ul>
               <li>
-                <a href="">Política de privacidad</a>
+                <p href="">Política de privacidad</p>
               </li>
               <span></span>
               <li>
-                <a href="">Política de cookies</a>
+                <p href="">Política de cookies</p>
               </li>
               <span></span>
               <li>
-                <a href="">Información legal y financiera</a>
+                <p href="">Información legal y financiera</p>
               </li>
               <span></span>
               <li>
-                <a href="">Partners oficiales</a>
+                <p href="">Partners oficiales</p>
               </li>
             </ul>
           </div>

@@ -18,6 +18,7 @@ import SearchBar from "./SearchBar/SearchBar";
 import ExchangeCard from "./ExchangeCard/ExchangeCard";
 import SkeletonMaterial from "./SkeletonMaterial/SkeletonMaterial";
 import PaginationComponent from "./PaginationComponent/PaginationComponent";
+import ResponsiveTable from "./ResponsiveTable/ResponsiveTable";
 
 export {
   Navlinks,
@@ -39,5 +40,6 @@ export {
   SearchBar,
   ExchangeCard,
   SkeletonMaterial,
-  PaginationComponent
+  PaginationComponent,
+  ResponsiveTable
 };

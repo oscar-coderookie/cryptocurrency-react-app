@@ -28,7 +28,7 @@ const ContactForm = () => {
           <span className="focus-input"></span>
         </div>
         <div className="form-btn-group">
-          <Button title="Enviar" fontColor="white" gradColor1="#f16100" gradColor2="#ffe600" direction="235deg" width="100%"/>
+          <Button title="Enviar" fontColor="#437A16" gradColor1="#cdfeaa" gradColor2="#cdfeaa" direction="45deg" width="100%"/>
         </div>
       </form>
     </div>

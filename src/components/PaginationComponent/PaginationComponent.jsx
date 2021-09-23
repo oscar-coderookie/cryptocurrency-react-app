@@ -17,9 +17,9 @@ const PaginationComponent = ({postsPerPage, totalPosts, paginate, setPostsPerPag
             <ul className="pagination-list">
                 {pageNumbers.map((number)=> (
                     <li key={number} className="pagination-item" onClick={() => paginate(number)}>
-                        <p className="pagination-icon" >
+                        <button className="pagination-icon" >
                             {number}
-                        </p>
+                        </button>
                     </li>
                 ))}
             </ul>
