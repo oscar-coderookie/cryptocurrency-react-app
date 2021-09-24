@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     padding: 10px 0px;
     margin: 0;
   }
@@ -12,13 +13,14 @@
     width: 100%;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    margin: 10px 0px;
+    justify-content: center;
   }
 
   &-options {
     display: flex;
+    justify-content: center;
     height: 30px;
-    margin-left: 100px;
 
     select {
       border: none;
@@ -39,6 +41,7 @@
   }
   &-item {
     list-style: none;
+    margin: 4px 0px;
   }
   &-icon {
     cursor: pointer;

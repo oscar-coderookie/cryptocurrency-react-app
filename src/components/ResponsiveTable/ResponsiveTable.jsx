@@ -1,41 +1,37 @@
-import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "./ResponsiveTable.scss";
-import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 
-const arrayHeaders = ["Moneda", "Símbolo", "Precio", "Volumen", "Cambio de precio", "Mkt cap"];
-
-const ResponsiveTable = ({ arrayCoins }) => {
+const ResponsiveTable = ({
+  arrayHeaders,
+  marketCap,
+  currentPrice,
+  name,
+  symbol,
+  imageURL,
+  totalVolume,
+  priceChange24h,
+}) => {
   return (
-    <Table className="d-table d-md-none">
-      <Thead>
-        <Tr>
+    <div className="table-responsive">
+      <div className="table-name_container">
+        <img className="coin-image" src={imageURL} alt={name} />
+        <p>{name}</p>
+      </div>
+      <div className="d-flex w-100 justify-content-between">
+        <div className="table-column_left fields">
           {arrayHeaders.map((header) => (
-            <Th key={header}>{header}</Th>
+            <p key={header}>{header}</p>
           ))}
-        </Tr>
-      </Thead>
-      <Tbody>
-        {arrayCoins.map((coin) => (
-          <Tr className="coin-cells" key={coin.id}>
-            <Td>
-              <img className="coin-image" src={coin.image} alt="" />
-              {coin.name}
-            </Td>
-            <Td className="symbol">{coin.symbol}</Td>
-            <Td>€ {coin.current_price}</Td>
-            <Td>€{coin.total_volume.toLocaleString()}</Td>
-            <Td>
-              {coin.price_change_percentage_24h < 0 ? (
-                <p className=" red">{coin.price_change_percentage_24h.toFixed(2)}%</p>
-              ) : (
-                <p className=" green">{coin.price_change_percentage_24h.toFixed(2)}%</p>
-              )}
-            </Td>
-            <Td>€{coin.market_cap.toLocaleString()}</Td>
-          </Tr>
-        ))}
-      </Tbody>
-    </Table>
+        </div>
+        <div className="table-column_right fields">
+          <p>{symbol}</p>
+          <p>€ {currentPrice}</p>
+          <p>€ {totalVolume}</p>
+          {priceChange24h < 0 ? <p className=" red">{priceChange24h}%</p> : <p className=" green">{priceChange24h}%</p>}
+
+          <p>€{marketCap}</p>
+        </div>
+      </div>
+    </div>
   );
 };
 

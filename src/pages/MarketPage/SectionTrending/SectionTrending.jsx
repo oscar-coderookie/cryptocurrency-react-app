@@ -25,7 +25,7 @@ const SectionTrending = () => {
         <div className="trending-section__cards row">
           {arrayCoins.map((coin) => {
             return (
-              <div className="col-8 col-md-6 col-lg-3 mx-auto" key={coin.item.id}>
+              <div className="col-10 col-md-6 col-lg-3 mx-auto" key={coin.item.id}>
                 <TrendingCoinCard 
                 coinName={coin.item.id} 
                 coinImg={coin.item.small}

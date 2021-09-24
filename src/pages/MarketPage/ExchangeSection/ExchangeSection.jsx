@@ -29,7 +29,8 @@ const ExchangeSection = () => {
   return (
     <Stack className="exchange-section container-xl">
       <div className="row">
-      <h1>Exchanges: compañias de criptomercado</h1>
+      <h1 className="text-center">Exchanges: compañias de criptomercado</h1>
+      <PaginationComponent postsPerPage={postsPerPage} totalPosts={data.length} paginate={paginate} setPostsPerPage={setPostsPerPage} />
         {currentPosts.map((coin) => {
           return (
             <div className="col-10 col-sm-6 col-md-4 col-lg-3 mx-auto my-2" key={coin.id}>
@@ -45,7 +46,7 @@ const ExchangeSection = () => {
           );
         })}
 
-        <PaginationComponent postsPerPage={postsPerPage} totalPosts={data.length} paginate={paginate} setPostsPerPage={setPostsPerPage} />
+
       </div>
     </Stack>
   );

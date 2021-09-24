@@ -1,5 +1,3 @@
-
-
 import './PaginationComponent.scss';
 
 const PaginationComponent = ({postsPerPage, totalPosts, paginate, setPostsPerPage}) => {
@@ -27,7 +25,7 @@ const PaginationComponent = ({postsPerPage, totalPosts, paginate, setPostsPerPag
             <p>Resultados por página:  </p>
               <select onChange={ handleChangePage}>
                 <option value="10">10</option>
-                <option value="20">20</option>
+                <option value="20" selected="selected">20</option>
                 <option value="30">30</option>
                 <option value="50">50</option>
             </select>  

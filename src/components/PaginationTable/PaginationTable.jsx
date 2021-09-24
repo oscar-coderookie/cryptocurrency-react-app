@@ -37,7 +37,7 @@ const PaginationTable = () => {
   const [orderDirection, setOrderDirection] = useState("asc");
   const [coins, setCoins] = useState([]);
   const [valuetoOrderBy, setValuetoOrderBy] = useState("name");
-  const [rowsPerPage, setRowsPerPage] = useState(20);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
   const [search, setSearch] = useState("");
 
   const handleRequestSort = (event, property) => {
@@ -105,9 +105,22 @@ const PaginationTable = () => {
   return (
     <>
       <TableContainer className="container-xl p-0  my-4 d-none d-md-table" component={Paper}>
+      
         <div className="d-flex justify-content-around flex-wrap">
           <h2 className="table__title">Mercado: listado de mercados</h2>
           <SearchBar handleSearch={handleSearch} />
+          <TablePagination
+          rowsPerPageOptions={[10, 20, 50]}
+          component="div"
+          count={coins.length}
+          className="m-0 p-0"
+          sx={{margin: 0}}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+          labelRowsPerPage="Filas por página"
+        />
         </div>
 
         <Table className="table-crypto" size="small" aria-label="a dense table">
@@ -163,7 +176,7 @@ const PaginationTable = () => {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((coin, index) => (
                 <StyledTableRow key={index}>
-                  <StyledTableCell align="center" className="table-names">
+                  <StyledTableCell sx={{display: 'flex', borderBottom: 'none'}} className="">
                     <img className="table-icons" src={coin.image} alt="logo" />
                     <p className="table-text ">{coin.name}</p>
                   </StyledTableCell>
@@ -188,15 +201,7 @@ const PaginationTable = () => {
               ))}
           </TableBody>
         </Table>
-        <TablePagination
-          rowsPerPageOptions={[10, 20, 50]}
-          component="div"
-          count={coins.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        />
+        
       </TableContainer>
     </>
   );
