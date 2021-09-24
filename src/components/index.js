@@ -19,6 +19,7 @@ import ExchangeCard from "./ExchangeCard/ExchangeCard";
 import SkeletonMaterial from "./SkeletonMaterial/SkeletonMaterial";
 import PaginationComponent from "./PaginationComponent/PaginationComponent";
 import ResponsiveTable from "./ResponsiveTable/ResponsiveTable";
+import PaginationReact from "./PaginationReact/PaginationReact";
 
 export {
   Navlinks,
@@ -41,5 +42,6 @@ export {
   ExchangeCard,
   SkeletonMaterial,
   PaginationComponent,
-  ResponsiveTable
+  ResponsiveTable,
+  PaginationReact
 };

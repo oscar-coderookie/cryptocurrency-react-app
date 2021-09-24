@@ -22,13 +22,7 @@ const PaginationComponent = ({postsPerPage, totalPosts, paginate, setPostsPerPag
                 ))}
             </ul>
             <div className="pagination-options">
-            <p>Resultados por página:  </p>
-              <select onChange={ handleChangePage}>
-                <option value="10">10</option>
-                <option value="20" selected="selected">20</option>
-                <option value="30">30</option>
-                <option value="50">50</option>
-            </select>  
+            
             </div>
             
         </div>

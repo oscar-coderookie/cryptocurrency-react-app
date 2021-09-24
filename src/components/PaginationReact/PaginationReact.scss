@@ -1,0 +1,93 @@
+.pagination {
+    display: flex;
+
+    &-page-select{
+        height:50px;
+    }
+
+  &-btns {
+    cursor: pointer;
+    padding: 0;
+    font-weight: 500;
+    list-style: none;
+    border: none;
+    width: 70%;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    background: rgb(204, 204, 204);
+  }
+  &-previous {
+    color: rgb(1, 94, 1);
+    font-weight: 500;
+    margin-left: 8px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 18px 6px 6px 18px;
+    padding: 10px;
+    background: rgb(170, 170, 170);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #cdfeaa;
+      color: rgb(1, 94, 1);
+      font-weight: 600;
+    }
+  }
+  &-next {
+    color: rgb(1, 94, 1);
+    font-weight: 500;
+    margin-right: 8px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    background: rgb(170, 170, 170);
+    padding: 10px;
+    border-radius: 6px 18px 18px 6px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #cdfeaa;
+      font-weight: 600;
+      color: rgb(1, 94, 1);
+    }
+  }
+
+  &-active {
+    text-decoration: none;
+    background: #cdfeaa;
+    border-radius: 12px;
+    padding: 10px;
+    color: rgb(0, 71, 0);
+  }
+
+  &-page-select{
+    display: flex;
+    height: 50px; 
+    background: rgb(204, 204, 204);
+    padding: 6px;
+    border-radius: 25px;
+    p{
+      margin: 0;
+      color: white;
+      font-weight: 700;
+      width:70%;
+      text-align: center;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    input{
+      background-color: transparent;
+      margin-right: 30px;
+      border:none;
+      outline: none;
+    }
+  }
+}
