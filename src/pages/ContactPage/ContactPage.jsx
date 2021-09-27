@@ -1,6 +1,6 @@
-import './ContactPage.css';
+import './ContactPage.scss';
 import React from 'react';
-import { CardContact, ContactForm } from '../../components';
+import { ContactForm } from '../../components';
 
 const ContactPage = () => {
     return (

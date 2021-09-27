@@ -11,6 +11,7 @@ import "./PaginationTable.scss";
 import axios from "axios";
 import { TablePagination, TableBody } from "@mui/material";
 import SearchBar from "../SearchBar/SearchBar";
+import apiMarket  from '../../api/coins';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -51,15 +52,19 @@ const PaginationTable = () => {
   };
 
   useEffect(() => {
+    const abortController = new AbortController();
+    const signal = abortController.abort();
+
     axios
-      .get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=250&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d"
-      )
+      .get(apiMarket, { signal: signal})
       .then((res) => {
         setCoins(res.data);
       })
-      .catch((error) => console.log(error));
-  }, []);
+      .catch((error) => console.log(error))
+    return () => {
+      abortController.abort();
+    }
+  }, [])
 
   function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {

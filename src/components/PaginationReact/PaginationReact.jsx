@@ -23,11 +23,9 @@ const PaginationReact = ({ pages, postsPerPage, changePage, setCoinsPerPage }) =
       />
       <div className="pagination-page-select">
         <p>Resultados por página: </p>
-        <select onChange={handleChangePage}>
+        <select onChange={handleChangePage} defaultValue={20}>
           <option value="10">10</option>
-          <option value="20" selected="selected">
-            20
-          </option>
+          <option value="20">20</option>
           <option value="30">30</option>
           <option value="50">50</option>
         </select>

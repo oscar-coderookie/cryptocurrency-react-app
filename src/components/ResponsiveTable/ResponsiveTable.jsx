@@ -26,7 +26,7 @@ const ResponsiveTable = ({
           <p>{symbol}</p>
           <p>€ {currentPrice}</p>
           <p>€ {totalVolume}</p>
-          {priceChange24h < 0 ? <p className=" red">{priceChange24h}%</p> : <p className=" green">{priceChange24h}%</p>}
+          {priceChange24h < 0 ? <div className="table-price_down"><span className="fas fa-chevron-circle-down"></span><p>{priceChange24h}%</p></div> : <div className="table-price_up"><span className="fas fa-chevron-circle-up"></span><p>{priceChange24h}%</p></div>}
 
           <p>€{marketCap}</p>
         </div>

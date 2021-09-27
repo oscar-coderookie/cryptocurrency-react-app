@@ -12,4 +12,15 @@
         text-align: center;
         padding: 20px 0px;
       }
+
+      @media (max-width: 625px) {
+        
+        &__title {
+          font-size:18px;
+          padding: 0px
+        }
+        &__legend{
+          font-size:14px;
+        }
+      }
 }

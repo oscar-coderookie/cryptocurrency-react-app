@@ -1,5 +1,8 @@
 .pagination {
     display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-wrap: wrap;
 
     &-page-select{
         height:50px;
@@ -8,11 +11,12 @@
   &-btns {
     cursor: pointer;
     padding: 0;
+    margin: 6px 0px;
     font-weight: 500;
     list-style: none;
     border: none;
     width: 70%;
-    height: 50px;
+    height: 46px;
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -68,13 +72,15 @@
 
   &-page-select{
     display: flex;
+    margin-left:2px;
     height: 50px; 
     background: rgb(204, 204, 204);
     padding: 6px;
+    color: gray;
     border-radius: 25px;
     p{
       margin: 0;
-      color: white;
+      
       font-weight: 700;
       width:70%;
       text-align: center;
@@ -83,11 +89,24 @@
       align-items: center;
     }
 
-    input{
+    select{
       background-color: transparent;
-      margin-right: 30px;
+      margin-right: 10px;
+      font-weight: 600;
       border:none;
       outline: none;
+      color: gray;
+
+      option{
+        color: gray;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    
+    &-btns{
+      width:100%;
     }
   }
 }

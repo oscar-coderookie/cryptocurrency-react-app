@@ -51,7 +51,7 @@ const RegisterForm = ({ onLogin }) => {
   return (
     <div className="container-xl">
       <div className="row">
-      {isLogin ? <h1 className="register-form__title">Inicio de Sesión:</h1> : <h1 className="register-form__title">Registro:</h1>}
+      {isLogin ? <h1 className="register-form__title">Inicio de Sesión:</h1> : <h1 className="register-form__title">No tienes cuenta aún? Regístrate ahora:</h1>}
         <div className="col-10 col-md-6 mx-auto">
           <form className="register-form" onSubmit={handleSubmit}>
             <fieldset className="register-form__fields mb-3 w-100">
