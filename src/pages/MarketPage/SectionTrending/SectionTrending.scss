@@ -1,21 +1,29 @@
 .trending-section{
     width: 100%;
-    background: url('../../../img/trending.jpg');
+    background:linear-gradient(to right, rgb(101, 168, 56), var(--primary-color), rgb(101, 168, 56));
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    position: relative;
 
     h1{
-        color: white;
+        color:var(--secondary-color);
         text-align: center;
     }
 
 
     &__legend{
-        color: white;
+        color: var(--secondary-color);
         font-weight: 400;
         text-align: center;
+    }
+
+    &__img{
+        position: absolute;
+        bottom: 0;
+        width: 300px;
+        z-index: 0;
     }
   
 

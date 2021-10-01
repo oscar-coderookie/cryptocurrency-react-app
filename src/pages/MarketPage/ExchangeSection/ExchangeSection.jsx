@@ -9,6 +9,27 @@ const ExchangeSection = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(10);
+  const [breakpoint, setBreakpoint] = useState(true);
+
+  const handleWindowResize = () => {
+    if (window.innerWidth > 768) {
+      setBreakpoint(true);
+    } else {
+      setBreakpoint(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+    if (window.innerWidth > 768) {
+      setBreakpoint(true);
+    } else {
+      setBreakpoint(false);
+    }
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
 
   useEffect(() => {
     axios
@@ -28,18 +49,19 @@ const ExchangeSection = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const headers = [
-    { field: "name", headerName: "Nombre moneda", width: 200 },
-    { field: "country", headerName: "País de origen", width: 150 },
-    { field: "url", headerName: "Sitio Web", width: 200},
-    {field: "trust_score_rank", headerName: "Ranking de confianza", width: 120, type: "number"} ,
+    { field: "name", headerName: "Compañía", width: 250 },
+    { field: "country", headerName: "País", width: 250 },
+
+    { field: "trust_score_rank", headerName: "TrustRank", width: 180, type: "number" },
     {
       field: "year_established",
-      headerName: "Año de fundación",
+      headerName: "Año",
       description: "This column has a value getter and is not sortable.",
       sortable: true,
-      width: 120,
-      type: "number"
+      width: 200,
+      type: "number",
     },
+    { field: "url", headerName: "Sitio Web", width: 300 },
   ];
 
   return (
@@ -47,30 +69,46 @@ const ExchangeSection = () => {
       <div className="container-xl">
         <div className="row">
           <h1 className="text-center">Exchanges: compañias de criptomercado</h1>
-          <PaginationComponent
-            postsPerPage={postsPerPage}
-            totalPosts={data.length}
-            paginate={paginate}
-            setPostsPerPage={setPostsPerPage}
-          />
-          {currentPosts.map((coin) => {
-            return (
-              <div className="col-11 col-md-4 col-lg-3 mx-auto my-2" key={coin.id}>
-                <SkeletonMaterial
-                  title={coin.name}
-                  imageURL={coin.image}
-                  country={coin.country}
-                  yearFoundation={coin.year_established}
-                  trustRank={coin.trust_score_rank}
-                  webURL={coin.url}
-                />
-              </div>
-            );
-          })}
+          {!breakpoint ? (
+            <div>
+              <PaginationComponent
+                postsPerPage={postsPerPage}
+                totalPosts={data.length}
+                paginate={paginate}
+                setPostsPerPage={setPostsPerPage}
+              />
+              {currentPosts.map((coin) => {
+                return (
+                  <div className="col-10 col-md-6 col-lg-3 mx-auto my-2" key={coin.id}>
+                    <SkeletonMaterial
+                      title={coin.name}
+                      imageURL={coin.image}
+                      country={coin.country}
+                      yearFoundation={coin.year_established}
+                      trustRank={coin.trust_score_rank}
+                      webURL={coin.url}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
+          {breakpoint ? (
+            <DataGrid
+            sx={{innerWidth: 1200}}
+              rows={data}
+              paginationMode="client"
+              rowCount={data.length}
+              columns={headers}
+              pageSize={10}
+              headerHeight={60}
+              header
+              autoHeight={true}
+              rowsPerPageOptions={[10, 20, 30]}
+            />
+          ) : null}
         </div>
-        <div style={{ height: 600, width: "100%" }}>
-          <DataGrid rows={currentPosts} columns={headers} pageSize={10} rowsPerPageOptions={[5, 20, 30]} checkboxSelection />
-        </div>
+        <div className="container-xl"></div>
       </div>
     </Stack>
   );

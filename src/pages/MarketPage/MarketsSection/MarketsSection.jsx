@@ -27,15 +27,13 @@ const MarketsSection = () => {
   }, []);
 
   return (
-    <div className="markets-section">
-      <div className="container-xl">
-        <h1 className="markets__title">CryptoMarket:</h1>
-        <p className="markets__legend">
-          Busca entre más de 200 criptomonedas disponibles y mira su información financiera y bursátil en tiempo real:
-        </p>
-        {!breakpoint ? <ResponsiveMarket /> : null}
-        {breakpoint ? <PaginationTable /> : null}
-      </div>
+    <div className="markets-section container-xl">
+      <h1 className="markets__title">CryptoMarket:</h1>
+      <p className="markets__legend">
+        Busca entre más de 200 criptomonedas disponibles y mira su información financiera y bursátil en tiempo real:
+      </p>
+      {!breakpoint ? <ResponsiveMarket /> : null}
+      {breakpoint ? <PaginationTable /> : null}
     </div>
   );
 };

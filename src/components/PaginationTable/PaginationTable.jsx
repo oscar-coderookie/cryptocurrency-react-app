@@ -11,7 +11,7 @@ import "./PaginationTable.scss";
 import axios from "axios";
 import { TablePagination, TableBody } from "@mui/material";
 import SearchBar from "../SearchBar/SearchBar";
-import apiMarket  from '../../api/coins';
+import apiMarket from "../../api/coins";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -56,15 +56,15 @@ const PaginationTable = () => {
     const signal = abortController.abort();
 
     axios
-      .get(apiMarket, { signal: signal})
+      .get(apiMarket, { signal: signal })
       .then((res) => {
         setCoins(res.data);
       })
-      .catch((error) => console.log(error))
+      .catch((error) => console.log(error));
     return () => {
       abortController.abort();
-    }
-  }, [])
+    };
+  }, []);
 
   function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -109,31 +109,31 @@ const PaginationTable = () => {
 
   return (
     <>
-      <TableContainer className="container-xl p-0  my-4 d-none d-md-table" component={Paper}>
-      
+      <TableContainer sx={{ width: "100%" }} className="p-0  my-4 d-none d-md-table" component={Paper}>
         <div className="d-flex justify-content-around flex-wrap">
           <h2 className="table__title">Mercado: listado de mercados</h2>
           <SearchBar handleSearch={handleSearch} />
           <TablePagination
-          rowsPerPageOptions={[10, 20, 50]}
-          component="div"
-          count={coins.length}
-          className="m-0 p-0"
-          sx={{margin: 0}}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-          labelRowsPerPage="Filas por página"
-        />
+            rowsPerPageOptions={[10, 20, 50]}
+            component="div"
+            count={coins.length}
+            className="m-0 p-0"
+            sx={{ margin: 0 }}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+            labelRowsPerPage="Filas por página"
+          />
         </div>
 
         <Table className="table-crypto" size="small" aria-label="a dense table">
           <TableHead className="table__head">
             <StyledTableRow>
-              <TableCell align="center">
+              <TableCell  align="center">
                 <TableSortLabel
-                className="table__label"
+                sx={{ color: '#fff' }}
+                  className="table__label"
                   active={valuetoOrderBy === "name"}
                   direction={valuetoOrderBy === "name" ? orderDirection : "asc"}
                   onClick={createSortHandler("name")}
@@ -141,7 +141,7 @@ const PaginationTable = () => {
                   Moneda:
                 </TableSortLabel>
               </TableCell>
-              <TableCell align="center">
+              <TableCell sx={{ }} align="center">
                 <TableSortLabel
                   active={valuetoOrderBy === "symbol"}
                   direction={valuetoOrderBy === "symbol" ? orderDirection : "asc"}
@@ -181,32 +181,33 @@ const PaginationTable = () => {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((coin, index) => (
                 <StyledTableRow key={index}>
-                  <StyledTableCell sx={{display: 'flex', borderBottom: 'none'}} className="">
+                  <StyledTableCell sx={{ display: "flex", borderBottom: "none" }} className="">
                     <img className="table-icons" src={coin.image} alt="logo" />
                     <p className="table-text ">{coin.name}</p>
                   </StyledTableCell>
-                  <StyledTableCell className="coin-symbol" align="center">
+                  <StyledTableCell sx={{ borderBottom: "none" }} className="coin-symbol" align="center">
                     {coin.symbol}
                   </StyledTableCell>
-                  <StyledTableCell align="center">€{coin.current_price}</StyledTableCell>
-                  <StyledTableCell className="d-none d-md-table-cell" align="center">
+                  <StyledTableCell sx={{ borderBottom: "none" }} align="center">
+                    €{coin.current_price}
+                  </StyledTableCell>
+                  <StyledTableCell sx={{ borderBottom: "none" }} className="d-none d-md-table-cell" align="center">
                     €{coin.total_volume.toLocaleString()}
                   </StyledTableCell>
-                  <StyledTableCell className="d-none d-md-table-cell" align="center">
+                  <StyledTableCell sx={{ borderBottom: "none" }} className="d-none d-md-table-cell" align="center">
                     {coin.price_change_percentage_24h < 0 ? (
                       <p className=" red">{coin.price_change_percentage_24h.toFixed(2)}%</p>
                     ) : (
                       <p className=" green">{coin.price_change_percentage_24h.toFixed(2)}%</p>
                     )}
                   </StyledTableCell>
-                  <StyledTableCell className="d-none d-md-table-cell" align="center">
+                  <StyledTableCell sx={{ borderBottom: "none" }} className="d-none d-md-table-cell" align="center">
                     €{coin.market_cap.toLocaleString()}
                   </StyledTableCell>
                 </StyledTableRow>
               ))}
           </TableBody>
         </Table>
-        
       </TableContainer>
     </>
   );
