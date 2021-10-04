@@ -22,6 +22,7 @@ import ResponsiveTable from "./ResponsiveTable/ResponsiveTable";
 import PaginationReact from "./PaginationReact/PaginationReact";
 import Hero4 from './HomeComponents/Hero4/Hero4';
 import CardHero4 from './HomeComponents/Hero4/CardHero4/CardHero4';
+import SubmenuMarket from './SubmenuMarket/SubmenuMarket';
 
 export {
   Navlinks,
@@ -47,5 +48,6 @@ export {
   ResponsiveTable,
   PaginationReact,
   Hero4,
-  CardHero4
+  CardHero4,
+  SubmenuMarket
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, withRouter } from "react-router-dom";
+import { SubmenuMarket } from "..";
 import "./NavLinks.scss";
 
 const NavLinks = ({ show, onLogout, hasUser }) => {
@@ -12,9 +13,7 @@ const NavLinks = ({ show, onLogout, hasUser }) => {
           </NavLink>
         </li>
         <li>
-          <NavLink className="navbar-links" to="/market">
-            Market
-          </NavLink>
+          <SubmenuMarket />
         </li>
         <li>
           <NavLink className="navbar-links" to="/contact">
@@ -28,7 +27,7 @@ const NavLinks = ({ show, onLogout, hasUser }) => {
             </NavLink>
           </li>
         )}
-        {hasUser ? <span onClick={onLogout} className="navbar-links fas fa-sign-out-alt mx-2"></span> : null}
+        {hasUser ? <span onClick={onLogout} className="navbar-links-span fas fa-sign-out-alt mx-2"></span> : null}
       </ul>
     </div>
   );

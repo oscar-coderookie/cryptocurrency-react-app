@@ -15,7 +15,6 @@ const Header = ({ onLogout, hasUser, user }) => {
         <img src={logo} alt="logo" className="header-logo" />
         <div className="header-right-container"></div>
         <div className="header-menu">
-          {hasUser ? <UserMenu hasUser={hasUser} user={user}/> :  null }
           <Hamburger  toggled={open} toggle={setOpen} onClick={() => setOpen(!open)} color="#437A16" />
         </div>
       </div>

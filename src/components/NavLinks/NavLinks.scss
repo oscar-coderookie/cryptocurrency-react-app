@@ -3,27 +3,34 @@
   background: #cdfeaa;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   top: 0;
   right: 0;
   transition: all 0.4s ease;
-  height: 8vh;
+  height: auto;
   z-index: 1;
   opacity: 0;
   transform: translateY(-100%);
 
   &-links {
-    color: #437A16;
+    color: var(--secondary-color);
     text-transform: uppercase;
     text-decoration: none;
     padding: 10px 0px;
     font-weight: 600;
     transition: all 0.3s ease;
 
-    &:hover {
-      color: rgb(97, 97, 97);
+    &:hover, &-span:hover{
+      color: rgb(242, 242, 242);
+      text-shadow: 0px 0px 2px black;
     }
+  }
+  &-links-span{
+    color: var(--secondary-color);
+    margin-top: 11px;
+    font-size: 20px;
+    cursor: pointer;
   }
 
   &-list {
@@ -31,7 +38,7 @@
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 
     li {
