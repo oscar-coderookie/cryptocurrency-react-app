@@ -8,6 +8,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import { Suspense, useState, useEffect } from "react";
 
 import { auth } from "./config/firebase";
+import CompanysPage from "./pages/CompanysPage/CompanysPage";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -39,8 +40,11 @@ function App() {
             <Route exact path="/">
               {user ? <HomePage userId={user.uid} user={user} /> : <RegisterPage onLogin={setUser} />}
             </Route>
-            <Route exact path="/market">
+            <Route exact path="/market/coins">
               {user ? <MarketPage /> : <Redirect to="/" />}
+            </Route>
+            <Route exact path="/market/companies">
+              {user ? <CompanysPage /> : <Redirect to="/" />}
             </Route>
             <Route exact path="/contact">
               {user ? <ContactPage /> : <Redirect to="/" />}

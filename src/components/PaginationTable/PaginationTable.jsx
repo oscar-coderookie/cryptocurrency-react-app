@@ -109,7 +109,7 @@ const PaginationTable = () => {
 
   return (
     <>
-      <TableContainer sx={{ width: "100%" }} className="p-0  my-4 d-none d-md-table" component={Paper}>
+      <TableContainer sx={{ width: "100%" }} className="p-0  my-5 d-none d-md-table" component={Paper}>
         <div className="d-flex justify-content-around flex-wrap">
           <h2 className="table__title">Mercado: listado de mercados</h2>
           <SearchBar handleSearch={handleSearch} />

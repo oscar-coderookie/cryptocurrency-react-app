@@ -68,7 +68,7 @@ const ExchangeSection = () => {
     <Stack className="exchange-section">
       <div className="container-xl">
         <div className="row">
-          <h1 className="text-center">Exchanges: compañias de criptomercado</h1>
+          <h1 className="my-4 text-center">Exchanges: compañias de criptomercado</h1>
           {!breakpoint ? (
             <div>
               <PaginationComponent
@@ -108,7 +108,7 @@ const ExchangeSection = () => {
             />
           ) : null}
         </div>
-        <div className="container-xl"></div>
+      
       </div>
     </Stack>
   );

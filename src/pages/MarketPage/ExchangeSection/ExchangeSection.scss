@@ -1,5 +1,10 @@
 .exchange-section{
     height: auto;
     width: 100%;
-    margin: 20px 0px;
+    margin: 40px 0px;
+    
+
+    &__title{
+        margin-bottom: 20px;
+    }
 }

@@ -1,16 +1,13 @@
 .navbar {
-  background-color: #acff7e;
-  background: #cdfeaa;
+  background: var(--primary-color);
   width: 100%;
-  display: flex;
+  display: none;
   align-items: flex-start;
   justify-content: center;
   top: 0;
   right: 0;
   transition: all 0.4s ease;
-  height: auto;
   z-index: 1;
-  opacity: 0;
   transform: translateY(-100%);
 
   &-links {
@@ -22,8 +19,13 @@
     transition: all 0.3s ease;
 
     &:hover, &-span:hover{
-      color: rgb(242, 242, 242);
+      color: var(--white-01);
       text-shadow: 0px 0px 2px black;
+    }
+    &:focus{
+      color: var(--white-01);
+      text-shadow: 0px 0px 2px black;
+
     }
   }
   &-links-span{
@@ -61,6 +63,6 @@
   }
 }
 .navbar.active {
-  opacity: 1;
   transform: translateY(0);
+  display: flex;
 }

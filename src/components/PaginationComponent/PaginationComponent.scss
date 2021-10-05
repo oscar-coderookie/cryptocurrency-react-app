@@ -60,14 +60,14 @@
 
 
     &:focus {
-      background: #cdfeaa;
-      color: #437A16;
+      background: var(--primary-color);
+      color: var(--secondary-color);
     }
 
     &:hover {
-      background: #cdfeaa;
+      background: var(--primary-color);
       box-shadow: 0px 0px 12px -5px rgba(0,0,0,0.68);
-      color: #437A16;
+      color: var(--secondary-color);
     }
 
     

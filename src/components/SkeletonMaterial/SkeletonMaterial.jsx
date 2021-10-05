@@ -18,8 +18,15 @@ const SkeletonMaterial = ({ imageURL, title, country, yearFoundation, trustRank,
           <Typography>{title}</Typography>
         </div>
         <div className="skeleton-aside right">
-          <Typography className="skeleton-info">País: {country}</Typography>
-          <Typography className="skeleton-info"> Año: {yearFoundation}</Typography>
+          <div className="skeleton-aside__city">
+           <Typography className="skeleton-info">País:</Typography> 
+           <Typography className="skeleton-info">{country}</Typography> 
+          </div>
+          <div className="skeleton-aside__year">
+          <Typography className="skeleton-info">Año:</Typography>
+          <Typography className="skeleton-info">{yearFoundation}</Typography>
+          </div>
+          
         </div>
       </Box>
     </Stack>

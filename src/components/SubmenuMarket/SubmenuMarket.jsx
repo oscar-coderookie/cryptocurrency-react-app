@@ -6,8 +6,8 @@ const SubmenuMarket = () => {
   const [isOpen, setOpen] = useState(false);
 
   const links = [
-    { title: "Criptomonedas", to: "/" },
-    { title: "Compañías", to: "/" },
+    { title: "Criptomonedas", to: "/market/coins" },
+    { title: "Compañías", to: "/market/companies" },
     { title: "Divisas", to: "/" },
   ];
 

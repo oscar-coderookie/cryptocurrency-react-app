@@ -54,5 +54,11 @@
     align-items: center;
     margin: 0px 10px;
   }
+  &-aside__city,
+  &-aside__year{
+    display: flex;
+    width:120px;
+    justify-content: space-between;
+  }
 }
 

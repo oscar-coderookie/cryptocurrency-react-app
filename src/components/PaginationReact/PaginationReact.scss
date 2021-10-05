@@ -26,7 +26,7 @@
     background: rgb(204, 204, 204);
   }
   &-previous {
-    color: rgb(1, 94, 1);
+    color: var(--secondary-color);
     font-weight: 500;
     margin-left: 8px;
     text-decoration: none;
@@ -38,13 +38,13 @@
     transition: all 0.3s ease;
 
     &:hover {
-      background: #cdfeaa;
-      color: rgb(1, 94, 1);
+      background: var(--primary-color);
+      color: var(--secondary-color);
       font-weight: 600;
     }
   }
   &-next {
-    color: rgb(1, 94, 1);
+    color: var(--secondary-color);
     font-weight: 500;
     margin-right: 8px;
     text-decoration: none;
@@ -56,18 +56,18 @@
     transition: all 0.3s ease;
 
     &:hover {
-      background: #cdfeaa;
+      background: var(--primary-color);
       font-weight: 600;
-      color: rgb(1, 94, 1);
+      color: var(--secondary-color);
     }
   }
 
   &-active {
     text-decoration: none;
-    background: #cdfeaa;
+    background: var(--primary-color);
     border-radius: 12px;
     padding: 10px;
-    color: rgb(0, 71, 0);
+    color: var(--secondary-color);
   }
 
   &-page-select{

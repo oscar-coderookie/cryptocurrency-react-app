@@ -1,6 +1,6 @@
 .trending-section{
     width: 100%;
-    background:linear-gradient(to right, rgb(101, 168, 56), var(--primary-color), rgb(101, 168, 56));
+    background:linear-gradient(to top,  var(--primary-color), rgb(101, 168, 56));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,13 +8,14 @@
     position: relative;
 
     h1{
-        color:var(--secondary-color);
+        color:var(--white-01);
         text-align: center;
+        text-transform: capitalize;
     }
 
 
     &__legend{
-        color: var(--secondary-color);
+        color:var(--white-01);
         font-weight: 400;
         text-align: center;
     }

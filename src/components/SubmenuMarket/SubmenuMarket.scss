@@ -12,9 +12,14 @@
     transition: all 0.3s ease;
 
     &:hover {
-      color: white;
+      color: var(--white-01);
       text-shadow: 0px 0px 2px black;
     }
+    &:focus {
+      color: var(--white-01);
+      text-shadow: 0px 0px 2px black;
+    }
+
   }
   &__element {
     margin: 0;
