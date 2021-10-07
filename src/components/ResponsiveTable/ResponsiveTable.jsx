@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./ResponsiveTable.scss";
 
 const ResponsiveTable = ({
@@ -9,9 +10,11 @@ const ResponsiveTable = ({
   imageURL,
   totalVolume,
   priceChange24h,
+  id
 }) => {
   return (
-    <div className="table-responsive">
+    <NavLink className="table-link" to={`/market/coins/${id}`}>
+      <div className="table-responsive">
       <div className="table-name_container">
         <img className="coin-image" src={imageURL} alt={name} />
         <p>{name}</p>
@@ -32,6 +35,8 @@ const ResponsiveTable = ({
         </div>
       </div>
     </div>
+    </NavLink>
+    
   );
 };
 

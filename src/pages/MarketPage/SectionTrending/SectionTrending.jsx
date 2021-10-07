@@ -8,12 +8,18 @@ const SectionTrending = () => {
   const [arrayCoins, setArrayCoins] = useState([]);
 
   useEffect(() => {
+    const abortController = new AbortController();
+    const signal = abortController.signal;
+
     axios
-      .get("https://api.coingecko.com/api/v3/search/trending")
+      .get("https://api.coingecko.com/api/v3/search/trending",{signal: signal})
       .then((res) => {
         setArrayCoins(res.data.coins);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      return function cleanup (){
+        abortController.abort();
+      }
   }, []);
 
 

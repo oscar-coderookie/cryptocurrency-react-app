@@ -12,6 +12,7 @@ import axios from "axios";
 import { TablePagination, TableBody } from "@mui/material";
 import SearchBar from "../SearchBar/SearchBar";
 import apiMarket from "../../api/coins";
+import { NavLink } from "react-router-dom";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -53,15 +54,18 @@ const PaginationTable = () => {
 
   useEffect(() => {
     const abortController = new AbortController();
-    const signal = abortController.abort();
+    const signal = abortController.signal;
+    const fetchApi = async () => {
+      await axios
+        .get(apiMarket, { signal: signal })
+        .then((res) => {
+          setCoins(res.data);
+        })
+        .catch((error) => console.log(error));
+    };
 
-    axios
-      .get(apiMarket, { signal: signal })
-      .then((res) => {
-        setCoins(res.data);
-      })
-      .catch((error) => console.log(error));
-    return () => {
+    fetchApi();
+    return function cleanup() {
       abortController.abort();
     };
   }, []);
@@ -130,9 +134,9 @@ const PaginationTable = () => {
         <Table className="table-crypto" size="small" aria-label="a dense table">
           <TableHead className="table__head">
             <StyledTableRow>
-              <TableCell  align="center">
+              <TableCell align="center">
                 <TableSortLabel
-                sx={{ color: '#fff' }}
+                  sx={{ color: "#fff" }}
                   className="table__label"
                   active={valuetoOrderBy === "name"}
                   direction={valuetoOrderBy === "name" ? orderDirection : "asc"}
@@ -141,7 +145,7 @@ const PaginationTable = () => {
                   Moneda:
                 </TableSortLabel>
               </TableCell>
-              <TableCell sx={{ }} align="center">
+              <TableCell sx={{}} align="center">
                 <TableSortLabel
                   active={valuetoOrderBy === "symbol"}
                   direction={valuetoOrderBy === "symbol" ? orderDirection : "asc"}
@@ -182,8 +186,10 @@ const PaginationTable = () => {
               .map((coin, index) => (
                 <StyledTableRow key={index}>
                   <StyledTableCell sx={{ display: "flex", borderBottom: "none" }} className="">
-                    <img className="table-icons" src={coin.image} alt="logo" />
-                    <p className="table-text ">{coin.name}</p>
+                    <NavLink className="d-flex text-decoration-none table-links" to={`/market/coins/${coin.id}`}>
+                      <img className="table-icons" src={coin.image} alt="logo" />
+                      <p className="table-text ">{coin.name}</p>
+                    </NavLink>
                   </StyledTableCell>
                   <StyledTableCell sx={{ borderBottom: "none" }} className="coin-symbol" align="center">
                     {coin.symbol}

@@ -9,6 +9,8 @@ import { Suspense, useState, useEffect } from "react";
 
 import { auth } from "./config/firebase";
 import CompanysPage from "./pages/CompanysPage/CompanysPage";
+import MarketDetail from "./pages/MarketDetail/MarketDetail";
+import GlobalPage from "./pages/GlobalPage/GlobalPage";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -43,8 +45,14 @@ function App() {
             <Route exact path="/market/coins">
               {user ? <MarketPage /> : <Redirect to="/" />}
             </Route>
+            <Route exact path="/market/coins/:id">
+              {user ? <MarketDetail /> : <Redirect to="/" />}
+            </Route>
             <Route exact path="/market/companies">
               {user ? <CompanysPage /> : <Redirect to="/" />}
+            </Route>
+            <Route exact path="/market/global">
+              {user ? <GlobalPage /> : <Redirect to="/" />}
             </Route>
             <Route exact path="/contact">
               {user ? <ContactPage /> : <Redirect to="/" />}

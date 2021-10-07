@@ -3,7 +3,6 @@ import { Twirl as Hamburger } from "hamburger-react";
 import "./Header.scss";
 import logo from "../../img/logo2.png";
 import NavLinks from "../NavLinks/NavLinks";
-import UserMenu from '../UserMenu/UserMenu';
 
 
 const Header = ({ onLogout, hasUser, user }) => {

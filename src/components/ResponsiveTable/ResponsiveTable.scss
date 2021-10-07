@@ -1,5 +1,9 @@
 .table{
 
+  &-link{
+    text-decoration: none;
+  }
+
   &-price_down{
     display: flex;
     align-items: center;

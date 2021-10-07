@@ -8,7 +8,7 @@ const SubmenuMarket = () => {
   const links = [
     { title: "Criptomonedas", to: "/market/coins" },
     { title: "Compañías", to: "/market/companies" },
-    { title: "Divisas", to: "/" },
+    { title: "Global", to: "/market/global" },
   ];
 
   const openSideNav = () => {

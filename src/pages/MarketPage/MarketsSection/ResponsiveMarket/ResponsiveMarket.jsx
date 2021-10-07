@@ -46,6 +46,7 @@ const ResponsiveMarket = () => {
             <div className="col-11 col-sm-6 mx-auto p-0" key={coin.id}>
               <ResponsiveTable
                 symbol={coin.symbol}
+                id={coin.id}
                 priceChange24h={coin.price_change_percentage_24h.toFixed(2)}
                 name={coin.name}
                 currentPrice={coin.current_price}

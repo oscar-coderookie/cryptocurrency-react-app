@@ -3,10 +3,6 @@ import './PaginationComponent.scss';
 const PaginationComponent = ({postsPerPage, totalPosts, paginate, setPostsPerPage}) => {
     const pageNumbers = [];
 
-    const handleChangePage = (e) => {
-        setPostsPerPage(e.target.value);
-    }
-
     for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
         pageNumbers.push(i);
     }
