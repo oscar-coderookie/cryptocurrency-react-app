@@ -79,7 +79,7 @@ const ExchangeSection = () => {
               />
               {currentPosts.map((coin) => {
                 return (
-                  <div className="col-10 col-md-6 col-lg-3 mx-auto my-2" key={coin.id}>
+                  <div className="col-11 col-md-6 col-lg-3 mx-auto my-2" key={coin.id}>
                     <SkeletonMaterial
                       title={coin.name}
                       imageURL={coin.image}

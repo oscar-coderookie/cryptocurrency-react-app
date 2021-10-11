@@ -9,7 +9,8 @@ const NavLinks = ({ show, onLogout, hasUser }) => {
       <ul className="navbar-list">
         <li>
           <NavLink className="navbar-links" to="/">
-            Inicio
+           <p className="d-none d-md-flex">Inicio</p> 
+           <span className="mobile-icons fas fa-home d-flex d-md-none"></span>
           </NavLink>
         </li>
         <li>
@@ -17,18 +18,21 @@ const NavLinks = ({ show, onLogout, hasUser }) => {
         </li>
         <li>
           <NavLink className="navbar-links" to="/contact">
-            Contacto
+            <p className="d-none d-md-flex">Contacto</p>
+            <span className="mobile-icons d-flex d-md-none fas fa-id-badge"></span>
           </NavLink>
         </li>
         {hasUser ? null : (
           <li>
             <NavLink className="navbar-links" to="/register">
-              Registro
+              <p className=" d-none d-md-flex">Registro</p>
+              <span className="mobile-icons d-flex d-md-none fas fa-user-plus"></span>
             </NavLink>
           </li>
         )}
-        {hasUser ? <span onClick={onLogout} className="navbar-links-span fas fa-sign-out-alt mx-2"></span> : null}
+        
       </ul>
+      {hasUser ? <span onClick={onLogout} className="navbar-links-logout fas fa-sign-out-alt mx-2"></span> : null}
     </div>
   );
 };

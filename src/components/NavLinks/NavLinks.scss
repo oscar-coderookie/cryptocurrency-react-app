@@ -28,11 +28,12 @@
 
     }
   }
-  &-links-span{
+  &-links-logout{
     color: var(--secondary-color);
-    margin-top: 11px;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
+    position:absolute;
+    right: 5%;
   }
 
   &-list {
@@ -44,25 +45,27 @@
     justify-content: space-between;
 
     li {
-      padding: 10px;
+      padding: 0px 10px;
     }
   }
   @media (max-width: 425px) {
     &-links {
       padding: 4px 0px;
-      font-size: 12px;
     }
     &-list {
       justify-content: center;
       margin: 0px 6px;
 
-      li {
-        padding: 4px;
-      }
+   
     }
   }
 }
 .navbar.active {
   transform: translateY(0);
   display: flex;
+}
+
+.mobile-icons{
+  font-size:24px;
+
 }

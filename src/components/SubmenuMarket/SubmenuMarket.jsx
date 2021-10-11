@@ -6,9 +6,9 @@ const SubmenuMarket = () => {
   const [isOpen, setOpen] = useState(false);
 
   const links = [
-    { title: "Criptomonedas", to: "/market/coins" },
-    { title: "Compañías", to: "/market/companies" },
-    { title: "Global", to: "/market/global" },
+    { title: "Criptomonedas", to: "/market/coins", className: "mobile-icons d-flex d-md-none fab fa-bitcoin" },
+    { title: "Compañías", to: "/market/companies" , className: "mobile-icons d-flex d-md-none fas fa-exchange-alt" },
+    { title: "Global", to: "/market/global" , className: "mobile-icons d-flex d-md-none fas fa-globe" },
   ];
 
   const openSideNav = () => {
@@ -16,21 +16,27 @@ const SubmenuMarket = () => {
   };
   return (
     <ul className="submenu" >
-      <div className="submenu__title" onClick={() => openSideNav()}>Mercados</div>
+      <div className="submenu__title" onClick={() => openSideNav()}>
+      <p className="d-none d-md-flex">Mercados</p>
+      <span className="mobile-icons d-flex d-md-none fas fa-search-dollar"></span>
+      
+      </div>
 
-      <div className="submenu__bar">
+      <ul className="submenu__bar">
         {isOpen &&
           links.map((link, index) => {
-            const { title, to } = link;
+            const { title, to , className} = link;
             return (
               <li key={index} className= "submenu__element">
                 <NavLink exact to={to} className="submenu-links">
-                  {title}
+                  <p className="d-none d-md-flex">{title}</p>
+                  <span className={className}></span>
+                  
                 </NavLink>
               </li>
             );
           })}
-      </div>
+      </ul>
     </ul>
   );
 };

@@ -11,13 +11,13 @@ const PaginationReact = ({ pages, postsPerPage, changePage, setCoinsPerPage }) =
   return (
     <div className="pagination">
       <ReactPaginate
-        previousLabel="Anterior"
-        nextLabel="Siguiente"
+        previousLabel=""
+        nextLabel=""
         pageCount={pageCount}
         onPageChange={changePage}
         containerClassName={"pagination-btns"}
-        previousLinkClassName={"pagination-previous"}
-        nextLinkClassName={"pagination-next"}
+        previousLinkClassName={"pagination-previous fas fa-caret-left"}
+        nextLinkClassName={"pagination-next fas fa-caret-right"}
         disabledClassName={"pagination-disabled"}
         activeLinkClassName={"pagination-active"}
       />

@@ -33,8 +33,8 @@ const ResponsiveMarket = () => {
   };
   //**Functions for react paginate component */
   return (
-    <div className="container-xl market-responsive">
-      <div className="row">
+    <div className="row mx-auto market-responsive">
+      <div className="">
         <PaginationReact
           pages={coins}
           postsPerPage={coinsPerPage}
@@ -43,7 +43,7 @@ const ResponsiveMarket = () => {
         />
         {coins.slice(coinsVisited, coinsVisited + coinsPerPage).map((coin) => {
           return (
-            <div className="col-11 col-sm-6 mx-auto p-0" key={coin.id}>
+            <div className="col-12 col-sm-6 mx-auto  my-4" key={coin.id}>
               <ResponsiveTable
                 symbol={coin.symbol}
                 id={coin.id}

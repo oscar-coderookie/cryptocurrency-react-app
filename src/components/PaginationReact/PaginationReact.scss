@@ -44,20 +44,20 @@
     }
   }
   &-next {
-    color: var(--secondary-color);
     font-weight: 500;
     margin-right: 8px;
     text-decoration: none;
-    color: white;
+    color: var(--secondary-color);
     text-transform: uppercase;
-    background: rgb(170, 170, 170);
     padding: 10px;
+    background: rgb(170, 170, 170);
     border-radius: 6px 18px 18px 6px;
     transition: all 0.3s ease;
 
     &:hover {
       background: var(--primary-color);
       font-weight: 600;
+      padding: 10px;
       color: var(--secondary-color);
     }
   }

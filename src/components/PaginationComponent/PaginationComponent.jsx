@@ -17,9 +17,7 @@ const PaginationComponent = ({postsPerPage, totalPosts, paginate, setPostsPerPag
                     </li>
                 ))}
             </ul>
-            <div className="pagination-options">
             
-            </div>
             
         </div>
     )

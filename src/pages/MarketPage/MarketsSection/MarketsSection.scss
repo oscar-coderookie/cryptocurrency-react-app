@@ -6,7 +6,7 @@
 
     &__legend{
         color: rgb(0, 0, 0);
-        text-align: center;
+        text-align: justify; 
         font-size: 18px;
       }
       &__title {
@@ -20,11 +20,9 @@
       @media (max-width: 625px) {
         
         &__title {
-          font-size:18px;
-          padding: 0px
+          font-size:24px;
+          padding: 10px 0px;
         }
-        &__legend{
-          font-size:14px;
-        }
+        
       }
 }
