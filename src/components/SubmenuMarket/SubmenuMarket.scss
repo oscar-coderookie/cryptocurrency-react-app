@@ -43,9 +43,7 @@
     margin: 0;
     padding: 0;
 
-    @media (max-width: 725px) {
-      
-    }
+   
   }
   &__title {
     text-align: center;
@@ -63,12 +61,13 @@
     }
   }
 
-  @media (max-width: 725px) {
+  @media (max-width: 768px) {
 
     &__bar{
       flex-direction: row;
       align-items: center;
       justify-content: center;
+    
     }
     
   }
