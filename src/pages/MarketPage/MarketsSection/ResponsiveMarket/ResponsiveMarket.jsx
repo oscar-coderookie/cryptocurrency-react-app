@@ -34,16 +34,11 @@ const ResponsiveMarket = () => {
   //**Functions for react paginate component */
   return (
     <div className="row mx-auto market-responsive">
-      <div className="row">
-        <PaginationReact
-          pages={coins}
-          postsPerPage={coinsPerPage}
-          changePage={changePage}
-          setCoinsPerPage={setCoinsPerPage}
-        />
+      <div className="row p-0">
+        
         {coins.slice(coinsVisited, coinsVisited + coinsPerPage).map((coin) => {
           return (
-            <div className="col-12 col-sm-6 mx-auto my-4" key={coin.id}>
+            <div className="col-12 col-sm-6 mx-auto my-2 p-0" key={coin.id}>
               <ResponsiveTable
                 symbol={coin.symbol}
                 id={coin.id}
@@ -55,9 +50,16 @@ const ResponsiveMarket = () => {
                 marketCap={coin.market_cap.toLocaleString()}
                 arrayHeaders={arrayHeaders}
               />
+              
             </div>
           );
         })}
+        <PaginationReact
+          pages={coins}
+          postsPerPage={coinsPerPage}
+          changePage={changePage}
+          setCoinsPerPage={setCoinsPerPage}
+        />
       </div>
     </div>
   );

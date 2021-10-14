@@ -3,10 +3,9 @@
   align-items: center;
   justify-content: space-between;
   height: 8vh;
-  background:  var(--primary-color);
+  background: var(--primary-color);
   z-index: 10;
   box-shadow: 2px -4px 20px -8px rgb(59, 59, 59);
-
 
   &-block {
     width: 100%;
@@ -24,7 +23,6 @@
     font-size: 30px;
     transition: all 0.2s ease;
     z-index: 10;
-    
   }
 
   &-logo {
@@ -33,7 +31,15 @@
     animation: shinyLogo 5s ease infinite;
     z-index: 7;
   }
-  
+
+  @media (max-width: 525px) {
+    &-menu {
+      padding-right: 10px;
+    }
+    &-logo{
+      margin-left:10px;
+    }
+  }
 }
 
 @keyframes shinyLogo {

@@ -1,6 +1,7 @@
 import "./Footer.scss";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import coinGecko from "../../img/coingecko.svg";
 
 const Footer = () => {
   return (
@@ -45,7 +46,16 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <p className="footer-block__copyright">All rights reserved - Cryptune 2021</p>
+          <div className="footer-block__copyright">
+            <div className="d-flex align-items-center justify-content-center py-2 flex-wrap">
+            <p className="px-2">Powered by:</p>
+              <img className="footer-block__copyright-img" src={coinGecko} alt={coinGecko} />
+              
+            </div>
+
+            <p>All rights reserved - Cryptune 2021</p>
+            <p>Oscar Serna Developer</p>
+          </div>
         </div>
       </div>
     </footer>

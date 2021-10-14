@@ -1,9 +1,9 @@
 .market-detail {
   margin: 30px 0px;
+  height:70vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+ 
 
   &__block {
     width: 100%;
@@ -11,7 +11,7 @@
     align-items: flex-start;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+  
   }
 
   &__title {
@@ -22,8 +22,8 @@
   }
 
   &__card {
-    box-shadow: 1px 0px 4px -3px black;
-    width: 1000px;
+    box-shadow: 1px 0px 16px -4px rgb(131, 131, 131);
+    width: 100%;
     display: flex;
     justify-content: center;
     border-radius: 8px;
@@ -33,14 +33,17 @@
 
     &-subtitle {
       font-size: 16px;
+      margin:0;
+      font-weight: bold;
       color: var(--secondary-color);
       font-weight: bold;
+      text-align: center;
       text-transform: capitalize;
-
     }
-    &-info{
+    &-info {
       font-weight: 500;
-      color: var(--secondary-color);
+      margin: 0;
+      color: var(--gray-dark);
     }
 
     &-title {
@@ -48,20 +51,19 @@
       align-items: center;
       flex-direction: column;
       width: 100%;
-      font-weight: bold;
-      margin-bottom: 20px;
       justify-content: center;
       width: auto;
       padding: 10px;
 
-      img{
-          margin-bottom:10px;
+      img {
+        margin-bottom: 10px;
       }
 
       p {
         margin: 0px 10px;
         color: var(--secondary-color);
         display: flex;
+        
         font-size: 24px;
         text-transform: uppercase;
         align-items: center;
@@ -76,22 +78,19 @@
       align-items: center;
       justify-content: center;
       width: 30%;
+      font-weight: 300;
       margin: 8px 0px;
-
-      p {
-        margin: 0px 10px;
-        text-align: center;
-      }
     }
   }
 
   @media (max-width: 1024px) {
-    &__card {
-      width: 80%;
-     
+    height: auto;
+    margin: 30px 10px;
 
-      &-text{
-          width: 50%;
+    &__card {
+
+      &-text {
+        width: 50%;
       }
     }
   }

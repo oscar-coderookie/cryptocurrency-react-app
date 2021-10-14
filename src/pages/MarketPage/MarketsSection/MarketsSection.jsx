@@ -27,12 +27,14 @@ const MarketsSection = () => {
   }, []);
 
   return (
-    <div className="markets__section container-xl">
-    
+    <div className="markets__section">
+    <div className="container-xl">
       <h1 className="markets__title">criptomonedas:</h1>
       <p className="markets__legend">
         Busca entre más de 200 criptomonedas disponibles y mira su información financiera y bursátil en tiempo real:
       </p>
+    </div>
+      
       {!breakpoint ? <ResponsiveMarket /> : null}
       {breakpoint ? <PaginationTable /> : null}
 
