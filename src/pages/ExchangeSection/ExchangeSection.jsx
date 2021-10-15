@@ -1,7 +1,7 @@
 import "./ExchangeSection.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { SkeletonMaterial, PaginationComponent } from "../../../components";
+import { ResponsiveExchangeCard, PaginationComponent } from "../../components";
 import { Stack } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 
@@ -67,30 +67,32 @@ const ExchangeSection = () => {
   return (
     <Stack className="exchange-section">
       <div className="container-xl">
-        <div className="row">
+        
           <h1 className="my-4 text-center">Exchanges: compañias de criptomercado</h1>
           {!breakpoint ? (
-            <div>
-              <PaginationComponent
-                postsPerPage={postsPerPage}
-                totalPosts={data.length}
-                paginate={paginate}
-                setPostsPerPage={setPostsPerPage}
-              />
+            <div className="row p-0">
+              
               {currentPosts.map((coin) => {
                 return (
-                  <div className="col-8 col-md-6 col-lg-3 mx-auto my-2" key={coin.id}>
-                    <SkeletonMaterial
+                  <div className="col-12 col-sm-6 col-lg-3 mx-auto my-2" key={coin.id}>
+                    <ResponsiveExchangeCard
                       title={coin.name}
                       imageURL={coin.image}
                       country={coin.country}
                       yearFoundation={coin.year_established}
                       trustRank={coin.trust_score_rank}
                       webURL={coin.url}
+                      id={coin.id}
                     />
                   </div>
                 );
               })}
+              <PaginationComponent
+                postsPerPage={postsPerPage}
+                totalPosts={data.length}
+                paginate={paginate}
+                setPostsPerPage={setPostsPerPage}
+              />
             </div>
           ) : null}
           {breakpoint ? (
@@ -107,7 +109,7 @@ const ExchangeSection = () => {
               rowsPerPageOptions={[10, 20, 30]}
             />
           ) : null}
-        </div>
+      
       
       </div>
     </Stack>

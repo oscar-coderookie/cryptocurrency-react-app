@@ -16,7 +16,7 @@ import CountrySelector from "./CountrySelector/CountrySelector";
 import UserMenu from "./UserMenu/UserMenu";
 import SearchBar from "./SearchBar/SearchBar";
 import ExchangeCard from "./ExchangeCard/ExchangeCard";
-import SkeletonMaterial from "./SkeletonMaterial/SkeletonMaterial";
+import ResponsiveExchangeCard from "./ResponsiveExchangeCard/ResponsiveExchangeCard";
 import PaginationComponent from "./PaginationComponent/PaginationComponent";
 import ResponsiveTable from "./ResponsiveTable/ResponsiveTable";
 import PaginationReact from "./PaginationReact/PaginationReact";
@@ -43,7 +43,7 @@ export {
   UserMenu,
   SearchBar,
   ExchangeCard,
-  SkeletonMaterial,
+  ResponsiveExchangeCard,
   PaginationComponent,
   ResponsiveTable,
   PaginationReact,

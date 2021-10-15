@@ -11,6 +11,7 @@ import { auth } from "./config/firebase";
 import CompanysPage from "./pages/CompanysPage/CompanysPage";
 import MarketDetail from "./pages/MarketDetail/MarketDetail";
 import GlobalPage from "./pages/GlobalPage/GlobalPage";
+import CompaniesDetail from "./pages/CompaniesDetail/CompaniesDetail";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -50,6 +51,9 @@ function App() {
             </Route>
             <Route exact path="/market/companies">
               {user ? <CompanysPage /> : <Redirect to="/" />}
+            </Route>
+            <Route exact path="/market/companies/:id">
+              {user ? <CompaniesDetail /> : <Redirect to="/" />}
             </Route>
             <Route exact path="/market/global">
               {user ? <GlobalPage /> : <Redirect to="/" />}

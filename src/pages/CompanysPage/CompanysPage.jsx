@@ -1,5 +1,5 @@
 import "./CompanysPage.scss";
-import ExchangeSection from '../MarketPage/ExchangeSection/ExchangeSection'
+import ExchangeSection from '../ExchangeSection/ExchangeSection';
 
 import React from "react";
 
