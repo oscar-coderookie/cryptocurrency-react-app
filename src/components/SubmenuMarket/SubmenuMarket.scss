@@ -21,8 +21,8 @@
       text-shadow: 0px 0px 2px black;
     }
     &:focus {
-      color: var(--white-01);
       text-shadow: 0px 0px 2px black;
+      font-weight: bold;
     }
 
   }

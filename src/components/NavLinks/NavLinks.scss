@@ -15,7 +15,7 @@
     text-transform: uppercase;
     text-decoration: none;
     padding: 10px 0px;
-    font-weight: 600;
+    font-weight: 700;
     transition: all 0.3s ease;
 
     &:hover, &-span:hover{
@@ -23,7 +23,7 @@
       text-shadow: 0px 0px 2px black;
     }
     &:focus{
-      color: var(--white-01);
+      font-weight: bold;
       text-shadow: 0px 0px 2px black;
 
     }

@@ -6,7 +6,7 @@ const SubmenuMarket = () => {
   const [isOpen, setOpen] = useState(false);
 
   const links = [
-    { title: "Criptomonedas", to: "/market/coins", className: "mobile-icons d-flex d-md-none fab fa-bitcoin" },
+    { title: "Tokens", to: "/market/coins", className: "mobile-icons d-flex d-md-none fab fa-bitcoin" },
     { title: "Compañías", to: "/market/companies" , className: "mobile-icons d-flex d-md-none fas fa-exchange-alt" },
     { title: "Global", to: "/market/global" , className: "mobile-icons d-flex d-md-none fas fa-globe" },
   ];

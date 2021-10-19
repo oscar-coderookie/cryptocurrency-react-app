@@ -3,33 +3,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ResponsiveExchangeCard, PaginationComponent } from "../../components";
 import { Stack } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
+
 
 const ExchangeSection = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(10);
-  const [breakpoint, setBreakpoint] = useState(true);
-
-  const handleWindowResize = () => {
-    if (window.innerWidth > 768) {
-      setBreakpoint(true);
-    } else {
-      setBreakpoint(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowResize);
-    if (window.innerWidth > 768) {
-      setBreakpoint(true);
-    } else {
-      setBreakpoint(false);
-    }
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
 
   useEffect(() => {
     axios
@@ -48,69 +27,34 @@ const ExchangeSection = () => {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  const headers = [
-    { field: "name", headerName: "Compañía", width: 250 },
-    { field: "country", headerName: "País", width: 250 },
-
-    { field: "trust_score_rank", headerName: "TrustRank", width: 180, type: "number" },
-    {
-      field: "year_established",
-      headerName: "Año",
-      description: "This column has a value getter and is not sortable.",
-      sortable: true,
-      width: 200,
-      type: "number",
-    },
-    { field: "url", headerName: "Sitio Web", width: 300 },
-  ];
-
   return (
     <Stack className="exchange-section">
       <div className="container-xl">
-        
-          <h1 className="my-4 text-center">Exchanges: compañias de criptomercado</h1>
-          {!breakpoint ? (
-            <div className="row p-0">
-              
-              {currentPosts.map((coin) => {
-                return (
-                  <div className="col-12 col-sm-6 col-lg-3 mx-auto my-2" key={coin.id}>
-                    <ResponsiveExchangeCard
-                      title={coin.name}
-                      imageURL={coin.image}
-                      country={coin.country}
-                      yearFoundation={coin.year_established}
-                      trustRank={coin.trust_score_rank}
-                      webURL={coin.url}
-                      id={coin.id}
-                    />
-                  </div>
-                );
-              })}
-              <PaginationComponent
-                postsPerPage={postsPerPage}
-                totalPosts={data.length}
-                paginate={paginate}
-                setPostsPerPage={setPostsPerPage}
-              />
-            </div>
-          ) : null}
-          {breakpoint ? (
-            <DataGrid
-            sx={{innerWidth: 1200}}
-              rows={data}
-              paginationMode="client"
-              rowCount={data.length}
-              columns={headers}
-              pageSize={10}
-              headerHeight={60}
-              header
-              autoHeight={true}
-              rowsPerPageOptions={[10, 20, 30]}
-            />
-          ) : null}
-      
-      
+        <h1 className="exchange-section__title my-4 text-center">Exchanges: compañias de criptomercado</h1>
+        <div className="row p-0">
+        <p className="exchange-section__description">En esta seccion encontramos más de 90 diferentes compañías dedicadas a la comercialización de criptodivisas a nivel mundial, ordenadas descendentemente por puntaje de confianza y credibilidad. </p>
+          {currentPosts.map((coin) => {
+            return (
+              <div className="col-12 col-sm-6 col-lg-3 mx-auto my-2" key={coin.id}>
+                <ResponsiveExchangeCard
+                  title={coin.name}
+                  imageURL={coin.image}
+                  country={coin.country}
+                  yearFoundation={coin.year_established}
+                  trustRank={coin.trust_score_rank}
+                  webURL={coin.url}
+                  id={coin.id}
+                />
+              </div>
+            );
+          })}
+          <PaginationComponent
+            postsPerPage={postsPerPage}
+            totalPosts={data.length}
+            paginate={paginate}
+            setPostsPerPage={setPostsPerPage}
+          />
+        </div>
       </div>
     </Stack>
   );

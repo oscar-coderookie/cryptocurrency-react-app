@@ -1,67 +1,61 @@
-.hero1{
-    background: url('https://images6.alphacoders.com/912/thumb-1920-912465.jpg');
-    width:100%;
-    height:92vh;
-    background-position: center;
-    background-size: cover;
+.hero1 {
+  background: url(../../../img/hero-11.jpg);
+  width: 100;
+  height: 92vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+
+  &__container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
-    position: relative;
- 
+    flex-direction: column;
+  }
 
-    &__container{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    
-    }
+  &__logo {
+    width: 320px;
+    filter: drop-shadow(0px 1px 9px white);
+    animation-timing-function: linear;
+  }
+  &__subtitle {
+    color: var(--white-01);
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  &__legend {
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 1px 1px 4px black;
+  }
+  &__salute {
+    color: white;
+    font-weight: 400;
+    font-size: 26px;
+    text-align: center;
+  }
 
-    &__logo{
-        width:200px;
-        filter: drop-shadow(0px 1px 9px white);
-        animation-timing-function: linear;
+  @media (max-width: 625px) {
+    &__logo {
+      width: 150px;
     }
-    &__title{
-        background: linear-gradient(45deg,  #947051 0, #a98359 16.67%, #fde395 33.33%, #d8b46c 50%, #c09a62 66.67%, #c0843f 83.33%, #947051 100%);
-        background-clip: text;
-        color: transparent;
-       font-size: 36px;
-        font-weight: 700;
-        text-transform: uppercase;
-        filter: drop-shadow(3px 3px 30px white);
-    }
-    &__legend{
-        color: white;
-        font-weight: 500;
-        text-align: center;
-        font-size: 18px;
-        text-shadow: 1px 1px 4px black;
-    }
-    &__salute{
-        color: white;
-        font-weight:400;
-        font-size: 26px;
-        text-align: center;
-    }
-
-    @media (max-width: 625px) {
-
-        &__logo{
-            width:150px;
-        }
-       
-     
-    }
+  }
 }
 
 @keyframes rotation3d {
-    0%{
-        transform: rotateY(0deg)
-    }
-    100%{
-        transform: rotateY(360deg);
-    }
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
 }

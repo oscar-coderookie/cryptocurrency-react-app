@@ -1,13 +1,15 @@
 .contact-page{
-    width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
+  width: 100%;
+
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   justify-content: center;
   align-items: center;
   padding: 15px;
-  padding: 120px 0px;
+  padding: 40px 0px;
+
+  &__img{
+    margin-left: 20px;
+    width: 300px;
+  }
 }

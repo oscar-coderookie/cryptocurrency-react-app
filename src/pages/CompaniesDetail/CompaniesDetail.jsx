@@ -98,6 +98,7 @@ const CompaniesDetail = () => {
 
   return (
     <div className="company-detail">
+    <div className="company-detail__section-1">
       <CompanyCardDetail
         name={detailData.name}
         country={detailData.country}
@@ -111,6 +112,9 @@ const CompaniesDetail = () => {
         redditURL={detailData.reddit_url}
         telegram={detailData.telegram_url}
       />
+      
+    </div>
+      
     </div>
   );
 };

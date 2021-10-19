@@ -11,12 +11,12 @@ const ResponsiveExchangeCard = ({ imageURL, title, country, yearFoundation, trus
             <img className="skeleton-header__image" alt={imageURL} src={imageURL} />
             <h4 className="skeleton-header__title">{title}</h4>
           </div>
-          <div className="skeleton-header__info">
+          {!country ? null : <div className="skeleton-header__info">
             <div className="skeleton-header__city">
               <p className="skeleton-header__subtitle">País:</p>
               <p className="skeleton-header__text">{country}</p>
             </div>
-          </div>
+          </div>}
         </div>
 
         <div className="skeleton-bottom">

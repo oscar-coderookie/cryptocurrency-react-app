@@ -12,7 +12,7 @@
   background-image: linear-gradient(0deg, #5f5f5f 0%, #808080 50%, #c9c9c9 100%);
 
   &-rank-green {
-    background-image: linear-gradient(0deg, #17a742 0%, #3eb462 50%, #64f18e 100%);
+    background-image: linear-gradient(0deg, #17a742 0%, #40c969 50%, #64f18e 100%);
   }
 
   &-header {
@@ -24,7 +24,8 @@
 
     &__city {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
+      margin-left: 14px;
       justify-content: center;
       flex-direction: column;
     }
@@ -35,7 +36,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-right: 16px;
+    
     }
 
     &__image {
@@ -46,6 +47,7 @@
       color: var(--white-01);
       margin: 0;
       font-weight: 500;
+      text-align: left;
     }
     &__title {
       display: flex;
@@ -65,7 +67,6 @@
     }
     &__text {
       color: var(--white-01);
-      margin-left: 4px;
       margin-bottom: 0;
     }
   }
@@ -88,10 +89,12 @@
       color: var(--white-01);
       margin-bottom: 0;
       font-weight: 500;
+      text-align: left;
     }
     &__text{
       margin-bottom: 0;
       margin-left: 4px;
+      text-align: left;
     }
     &__info {
       margin-left: 4px;
