@@ -4,6 +4,7 @@ import axios from "axios";
 
 const GlobalPage = () => {
   const [data, setData] = useState({});
+  //eslint-disable-next-line
   const [marketCap, setMarketCap] = useState({});
 
   useEffect(() => {

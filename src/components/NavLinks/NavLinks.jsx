@@ -9,8 +9,8 @@ const NavLinks = ({ show, onLogout, hasUser }) => {
       <ul className="navbar-list">
         <li>
           <NavLink className="navbar-links" to="/">
-           <p className="d-none d-md-flex">Inicio</p> 
-           <span className="mobile-icons fas fa-home d-flex d-md-none"></span>
+            <p className="d-none d-md-flex">Inicio</p>
+            <span className="mobile-icons fas fa-home d-flex d-md-none"></span>
           </NavLink>
         </li>
         <li>
@@ -30,7 +30,9 @@ const NavLinks = ({ show, onLogout, hasUser }) => {
             </NavLink>
           </li>
         )}
-        
+        <NavLink className="navbar-links" to="/login">
+          <span className="mobile-icons fas fa-sign-in-alt"></span>
+        </NavLink>
       </ul>
       {hasUser ? <span onClick={onLogout} className="navbar-links-logout fas fa-sign-out-alt mx-2"></span> : null}
     </div>

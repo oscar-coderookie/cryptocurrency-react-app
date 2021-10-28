@@ -23,6 +23,8 @@ import PaginationReact from "./PaginationReact/PaginationReact";
 import Hero4 from './HomeComponents/Hero4/Hero4';
 import CardHero4 from './HomeComponents/Hero4/CardHero4/CardHero4';
 import SubmenuMarket from './SubmenuMarket/SubmenuMarket';
+import RegisterNodejs from "./RegisterNodejs/RegisterNodejs";
+import LoginForm from "./LoginForm/LoginForm";
 
 export {
   Navlinks,
@@ -49,5 +51,7 @@ export {
   PaginationReact,
   Hero4,
   CardHero4,
-  SubmenuMarket
+  SubmenuMarket,
+  RegisterNodejs,
+  LoginForm
 };
