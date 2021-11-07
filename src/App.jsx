@@ -1,5 +1,5 @@
 import "./App.scss";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Header, Footer, LoadingComponent } from "./components";
 import MarketPage from "./pages/MarketPage/MarketPage";
 import HomePage from "./pages/HomePage/HomePage";
@@ -43,7 +43,7 @@ function App() {
     <Router>
       <UserContext.Provider value={user}>
         <div className="App">
-          <Header />
+          <Header saveUser={saveUser} />
           <Suspense fallback={<LoadingComponent />}>
             <Switch>
               <Route exact path="/" render={(props)=> <HomePage {...props} user={user} />}/>

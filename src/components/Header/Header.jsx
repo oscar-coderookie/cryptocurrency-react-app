@@ -5,7 +5,7 @@ import logo from "../../img/logo2.png";
 import NavLinks from "../NavLinks/NavLinks";
 
 
-const Header = ({ onLogout, hasUser, user }) => {
+const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -17,7 +17,7 @@ const Header = ({ onLogout, hasUser, user }) => {
           <Hamburger  toggled={open} toggle={setOpen} onClick={() => setOpen(!open)} color="#437A16" />
         </div>
       </div>
-      <NavLinks show={open} onLogout={onLogout} hasUser={hasUser} />
+      <NavLinks show={open} />
     </div>
   );
 };
