@@ -1,7 +1,6 @@
 .register-form{
     height:auto;
     background: rgb(243, 243, 243);
-    padding: 30px;
     border-radius: 8px;
 
     &__fields{
@@ -13,13 +12,13 @@
         background: none;
         border: none;
         border-radius: 0px;
-        height: 40px;
+        height: 20px;
         border-bottom: 1px solid rgba(128, 128, 128, 0.534);
     }
     &__title{
         
         text-align: center;
-        margin-bottom:30px;
+        margin-bottom:10px;
         font-weight: 600;
     }
 

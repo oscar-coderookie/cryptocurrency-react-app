@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ToogleSwitch } from './components';
 
 const ThemeChanger = () => {
-  const [themeState, setThemeState] = useState(false);
+  const [themeState, setThemeState] = useState(true);
 
   const handleChange = () => {
     setThemeState(!themeState);
@@ -20,7 +20,7 @@ const ThemeChanger = () => {
   })
   return (
     <>
-      <ToogleSwitch onChange={handleChange} name={themeState ? 'Light Mode' : 'Dark Mode'}/>
+      <ToogleSwitch value={themeState} onChange={handleChange} name={themeState ? 'Modo Light' : 'Modo Dark'}/>
     </>
   )
 }

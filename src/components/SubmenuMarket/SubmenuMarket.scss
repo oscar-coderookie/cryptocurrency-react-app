@@ -8,7 +8,7 @@
   list-style: none;
 
   &-links {
-    color: var(--secondary-color);
+    color: var(--text-color);
     text-transform: uppercase;
     text-decoration: none;
     padding: 0;
@@ -52,7 +52,7 @@
     margin-bottom: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-    color: var(--secondary-color);
+    color: var(--text-color);
     text-transform: uppercase;
 
     &:hover {

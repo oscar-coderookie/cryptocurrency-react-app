@@ -27,9 +27,9 @@ const ContactForm = () => {
         <div className="form-btn-group">
           <Button
             title="Enviar"
-            fontColor="#437A16"
-            gradColor1="#cdfeaa"
-            gradColor2="#cdfeaa"
+            fontColor="var(--text-color)"
+            gradColor1="var(--primary-color)"
+            gradColor2="var(--secondary-color)"
             direction="45deg"
             width="100%"
           />

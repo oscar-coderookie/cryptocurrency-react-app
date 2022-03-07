@@ -14,7 +14,7 @@ const Header = () => {
         <img src={logo} alt="logo" className="header-logo" />
         <div className="header-right-container"></div>
         <div className="header-menu">
-          <Hamburger  toggled={open} toggle={setOpen} onClick={() => setOpen(!open)} color="#437A16" />
+          <Hamburger  toggled={open} toggle={setOpen} onClick={() => setOpen(!open)} color="var(--text-color)" />
         </div>
       </div>
       <NavLinks show={open} />

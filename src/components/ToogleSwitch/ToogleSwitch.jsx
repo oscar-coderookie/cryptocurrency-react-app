@@ -1,12 +1,16 @@
 import React from 'react';
 import './ToogleSwitch.scss';
-import Switch from '@mui/material/Switch';
+import Switch from 'react-switch';
 
-const ToogleSwitch = ({onChange, name}) => {
+const ToogleSwitch = ({onChange, name, value}) => {
   return (
 
 <div className="toogle">
-<Switch color="default" onChange={onChange} />
+<Switch  onChange={onChange} onColor="#2d5a08"
+offColor='#999999'
+checkedIcon={true} 
+uncheckedIcon={false} 
+checked={value}  />
         <p>{name}</p>
 </div>
         
