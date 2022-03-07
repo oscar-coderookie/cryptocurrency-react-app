@@ -2,7 +2,7 @@ import "./SubmenuMarket.scss";
 import { NavLink, withRouter } from "react-router-dom";
 import React, { useState } from "react";
 
-const SubmenuMarket = () => {
+const SubmenuMarket = ({openMenu}) => {
   const [isOpen, setOpen] = useState(false);
 
   const links = [
@@ -28,7 +28,7 @@ const SubmenuMarket = () => {
             const { title, to , className} = link;
             return (
               <li key={index} className= "submenu__element">
-                <NavLink exact to={to} className="submenu-links">
+                <NavLink exact to={to} className="submenu-links" onClick={openMenu}>
                   <p className="d-none d-md-flex">{title}</p>
                   <span className={className}></span>
                   

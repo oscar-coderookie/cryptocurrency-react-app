@@ -6,34 +6,29 @@ import { logout } from "../../api/auth.api";
 import "./NavLinks.scss";
 import ThemeChanger from "../../ThemeChanger";
 
-const NavLinks = ({ show }) => {
+const NavLinks = ({ show, closeMenu }) => {
   const user = useContext(UserContext);
 
   const logoutSesion = async () => {
     await logout();
   };
 
-  console.log(user)
+  console.log(user);
 
   return (
     <div className={show ? "navbar active" : "navbar"}>
-     
       <ul className="navbar-list">
-
-     
-     
-   
         <li>
-          <NavLink className="navbar-links" to="/">
+          <NavLink className="navbar-links" to="/" onClick={closeMenu}>
             <p className="d-none d-md-flex">Inicio</p>
             <span className="mobile-icons fas fa-home d-flex d-md-none"></span>
           </NavLink>
         </li>
         <li>
-          <SubmenuMarket />
+          <SubmenuMarket openMenu={closeMenu} />
         </li>
         <li>
-          <NavLink className="navbar-links" to="/contact">
+          <NavLink className="navbar-links" to="/contact" onClick={closeMenu}>
             <p className="d-none d-md-flex">Contacto</p>
             <span className="mobile-icons d-flex d-md-none fas fa-id-badge"></span>
           </NavLink>
@@ -41,25 +36,29 @@ const NavLinks = ({ show }) => {
 
         {!user ? (
           <>
-          <li>
-          <NavLink className="navbar-links" to="/register">
-            <p className=" d-none d-md-flex">Registro</p>
-            <span className="mobile-icons d-flex d-md-none fas fa-user-plus"></span>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className="navbar-links" to="/login">
-            <span className="mobile-icons fas fa-sign-in-alt"></span>
-          </NavLink>
-        </li>
-        </>) : (
+            <li>
+              <NavLink className="navbar-links" to="/register" onClick={closeMenu}>
+                <p className=" d-none d-md-flex">Registro</p>
+                <span className="mobile-icons d-flex d-md-none fas fa-user-plus"></span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="navbar-links" to="/login" onClick={closeMenu}>
+                <span className="mobile-icons fas fa-sign-in-alt"></span>
+              </NavLink>
+            </li>
+          </>
+        ) : (
           <>
             <span className="nav__icon">Hello</span>
-            <span onClick={logoutSesion} className="navbar-links-logout fas fa-sign-out-alt mx-2"></span>
+            <span
+              onClick={logoutSesion}
+              className="navbar-links-logout fas fa-sign-out-alt mx-2"
+            ></span>
           </>
         )}
       </ul>
-      <ThemeChanger/>
+      <ThemeChanger />
     </div>
   );
 };

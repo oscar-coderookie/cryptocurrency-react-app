@@ -17,7 +17,7 @@ const Header = () => {
           <Hamburger  toggled={open} toggle={setOpen} onClick={() => setOpen(!open)} color="var(--text-color)" />
         </div>
       </div>
-      <NavLinks show={open} />
+      <NavLinks show={open} closeMenu={()=> setOpen(!open)}/>
       
     </div>
   );
