@@ -4,6 +4,7 @@ import { SubmenuMarket } from "..";
 import { UserContext } from "../../App";
 import { logout } from "../../api/auth.api";
 import "./NavLinks.scss";
+import ThemeChanger from "../../ThemeChanger";
 
 const NavLinks = ({ show }) => {
   const user = useContext(UserContext);
@@ -16,7 +17,12 @@ const NavLinks = ({ show }) => {
 
   return (
     <div className={show ? "navbar active" : "navbar"}>
+     
       <ul className="navbar-list">
+
+     
+     
+   
         <li>
           <NavLink className="navbar-links" to="/">
             <p className="d-none d-md-flex">Inicio</p>
@@ -53,6 +59,7 @@ const NavLinks = ({ show }) => {
           </>
         )}
       </ul>
+      <ThemeChanger/>
     </div>
   );
 };

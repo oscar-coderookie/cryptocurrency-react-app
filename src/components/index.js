@@ -25,6 +25,7 @@ import CardHero4 from './HomeComponents/Hero4/CardHero4/CardHero4';
 import SubmenuMarket from './SubmenuMarket/SubmenuMarket';
 import RegisterNodejs from "./RegisterNodejs/RegisterNodejs";
 import LoginForm from "./LoginForm/LoginForm";
+import ToogleSwitch from "./ToogleSwitch/ToogleSwitch"
 
 export {
   Navlinks,
@@ -53,5 +54,6 @@ export {
   CardHero4,
   SubmenuMarket,
   RegisterNodejs,
-  LoginForm
+  LoginForm,
+  ToogleSwitch
 };

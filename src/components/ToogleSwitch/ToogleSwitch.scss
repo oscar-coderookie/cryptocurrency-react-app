@@ -1,0 +1,11 @@
+.toogle{
+  display: flex;
+  align-items: center;
+
+  p{
+    margin: 0;
+    color: var(--text-color);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

@@ -43,6 +43,7 @@ function App() {
     <Router>
       <UserContext.Provider value={user}>
         <div className="App">
+        
           <Header saveUser={saveUser} />
           <Suspense fallback={<LoadingComponent />}>
             <Switch>
